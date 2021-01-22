@@ -1,0 +1,67 @@
+extends /blocks/layout-popup/layout-popup.pug
+
+include /blocks/popup/popup.pug
+include /blocks/heading/heading.pug
+include /blocks/icon/icon.pug
+include /blocks/form/form.pug
+
+block content
+	+popup({"icon": "close", "title": "Оставить отзыв"})._review
+		+form._review
+			+e.content
+				+e.col
+					+e.row
+						+form-input({
+							"type": "text",
+							"icon": "user",
+							"label": "Ваше имя и фамилия",
+							"placeholder": "Ваше имя и фамилия",
+							"name": "name",
+							"id": "review-name"
+						})._nolabel._dark._icon
+					+e.row
+						+form-input({
+							"type": "text",
+							"icon": "phone2",
+							"label": "Номер телефона",
+							"placeholder": "Номер телефона",
+							"name": "number",
+							"id": "review-number"
+						})._nolabel._dark._icon
+				+e.col
+					+e.row
+						+form-star({
+							"label": "Ваша оценка:",
+							"id": "review-rating"
+						})
+						//- +form-input({
+						//- 	"type": "text",
+						//- 	"icon": "hash",
+						//- 	"label": "Номер договора",
+						//- 	"placeholder": "Номер договора",
+						//- 	"name": "phone2",
+						//- 	"id": "review-phone"
+						//- })._nolabel._dark._icon
+					+e.row
+						+form-file({
+							"label": "Ваше фото",
+							"placeholder": "Ваше фото",
+							"name": "file",
+							"id": "review-file"
+						})._nolabel._dark
+			+e.row
+				+form-textarea({
+					"label": "Ваш отзыв",
+					"placeholder": "Ваш отзыв",
+					"name": "review",
+					"id": "feedback-review"
+				})._nolabel._dark
+			+e.footer
+				+e.row
+					+form-checkbox({
+						"name": "review-fz152",
+						"value": 1,
+						"checked": false
+					}).form__checkbox
+						+e('span').txt Прочитал и принимаю #[a.form-checkbox__link(href="#") политику конфиденциальности]
+					+button._medium.form__submit Оставить отзыв

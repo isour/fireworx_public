@@ -1,0 +1,45 @@
+.price
+  display: block
+  &__item
+    display: flex
+    align-items: center
+    background-image: resolve('common/dots.png')
+    background-repeat: repeat-x
+    background-position: 0 19px
+    line-height: 1
+    margin-bottom: 15px
+  &__value,
+  &__label,
+  &__discount
+    flex: 0 0 30%
+  &__label
+    flex-basis: 40%
+    padding-left: 4px
+    padding-right: 4px
+    background-color: #1A1724
+    font-size: 12px
+  &__discount
+    padding-right: 0
+  &__value-inner,
+  &__label-inner,
+  &__discount-inner
+    background-color: #1A1724
+    padding: 2px
+    display: inline-block
+  &__value
+    font-weight: 500
+  &__discount
+    color: var(--color_pink)
+    text-align: right
+  &__discount-inner
+    padding-left: 4px
+  @mixin tablet
+    width: 560px
+    &__item
+      align-items: baseline
+    &__value
+      font-size: 22px
+    &__label
+      font-size: 16px
+    &__discount
+      font-size: 18px

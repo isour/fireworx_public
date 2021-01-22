@@ -1,0 +1,75 @@
+.video
+  display: block
+  border-radius: 16px
+  overflow: hidden
+  position: relative
+  width: 100%
+  height: 0
+  padding-bottom: 56.25%
+  &__link
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+  &__media
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: none
+  &__button
+    position: absolute
+    background: linear-gradient(to right, #ff5a4c, #ff1660)
+    top: 50%
+    left: 50%
+    z-index: 1
+    display: none
+    padding: 0
+    width: 70px
+    height: 70px
+    border-radius: 50%
+    border: none
+    background-color: transparent
+    transform: translate(-50%, -50%)
+    cursor: pointer
+    &:focus
+      outline: none
+  &__icon
+    position: relative
+    left: 2px
+  &__svg
+    width: 68px
+    height: 48px
+  &__button-shape
+    fill: #212121
+    fill-opacity: 0.8
+    transition: fill .4s
+  &__button-icon
+    fill: #ffffff
+    transition: fill .4s
+  &__header
+    font-size: 14px
+    font-weight: 500
+    line-height: 1.1
+    margin-top: 15px
+  &:hover #icon_youtube
+    background-color: yellow
+  &:hover &__button-shape,
+  &__button:focus &__button-shape
+    fill: #ff0000
+    fill-opacity: 1
+  &_enabled
+    cursor: pointer
+  &_enabled &__button
+    display: block
+
+.video-native
+  display: block
+  width: 100%
+  background-color: var(--color_light)
+  border-radius: 16px
+  overflow: hidden
+  @mixin tablet
+    height: 100%

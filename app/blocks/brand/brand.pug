@@ -1,0 +1,7 @@
+mixin brand(data)
+	+b('a').brand&attributes(attributes)(href = '#' title = data.title)
+		if block
+			block
+		else
+			+e.media
+				+image({'file': 'temp/' + data.img, 'alt': `${data.title}`, 'slick': true}).brand__img

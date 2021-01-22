@@ -1,0 +1,48 @@
+include /../node_modules/bemto.pug/bemto
+include ../partials/jade-injected.pug
+include ../page/page.pug
+include ../scripts/scripts.pug
+
+include ../header/header.pug
+include ../footer/footer.pug
+include ../layout/layout.pug
+include ../form/form.pug
+include ../section/section.pug
+include ../heading/heading.pug
+include ../tabs/tabs.pug
+include ../grid/grid.pug
+include ../table/table.pug
+include ../image/image.pug
+include ../text-image/text-image.pug
+include ../text-block/text-block.pug
+include ../list/list.pug
+include ../slider-controls/slider-controls.pug
+
+include ../parts/parts.pug
+include ../post-header/post-header.pug
+include ../icon/icon.pug
+include ../hero/hero.pug
+include ../promo-list/promo-list.pug
+include ../share/share.pug
+include ../contacts/contacts.pug
+include ../map/map.pug
+include ../review-item/review-item.pug
+include ../about/about.pug
+
+- prod = ( 'production' == process.env.NODE_ENV ? true : false );
+- iPath = 'assets/images/';
+
+doctype html
+html(lang='ru')
+	include ../head/head
+	+page#page
+		+header().page__header
+		+e('main').content
+			+e.post
+				+post-header
+			block content
+		+footer().page__footer
+		if prod
+			+scripts(['app.min.js'])
+		else
+			+scripts(['app.js'])

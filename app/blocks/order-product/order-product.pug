@@ -1,0 +1,8 @@
+mixin order-product()
+	+b.order-product&attributes(attributes)
+		block
+		+e.media
+			+image({'file': 'temp/order.jpg', 'alt': 'Лодка надувная Лодка 305НД 290НДскоростная'}).order-product__img
+		+e.title Лодка надувная Лодка 305НД 290НДскоростная
+		+e.count 2 шт
+		+e.price 31 180 руб.

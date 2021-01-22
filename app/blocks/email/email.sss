@@ -1,0 +1,15 @@
+.email
+  display: block
+  font-weight: 500
+  font-size: 14px
+  &_page
+    text-align: left
+  @mixin tablet
+    &_contacts
+      font-size: 18px
+    &_contacts &__link
+      color: var(--color_orange)
+    &_page
+      font-size: 18px
+    &_page &__link
+      color: var(--color_orange)

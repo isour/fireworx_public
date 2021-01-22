@@ -1,0 +1,11 @@
+mixin phone()
+	+b.phone&attributes(attributes)
+		if block
+			block
+		else
+			+e('a').link(href="tel:+73952288477")
+				+e.media
+					+icon('phone').icon_phone
+				+e.content +7 (3952) 95-30-04
+			//- +e('a').callback.js-popup(href="popup-callback.html", data-url="popup-callback.html", title="Вы можете заказать обратный звонок. Наш менеджер позвонит в удобное для Вас время в ближайший рабочий день.")
+			//- 	+e.callback-text Заказать звонок

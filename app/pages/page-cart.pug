@@ -1,0 +1,48 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/icon/icon.pug
+include /blocks/fieldset/fieldset.pug
+include /blocks/cart-total/cart-total.pug
+include /blocks/cart-list/cart-list.pug
+include /blocks/breadcrumbs/breadcrumbs.pug
+include /blocks/cart-delivery/cart-delivery.pug
+include /blocks/cart-contacts/cart-contacts.pug
+include /blocks/cart-payment/cart-payment.pug
+
+block head
+	- var pageTitle = 'Корзина';
+
+block content
+	+section('promoline')._line
+	+section._breadcrumbs
+		+e.container.container
+			+breadcrumbs([{'title': 'Каталог', 'link': true, 'mobile': true}, {'title': 'Корзина', 'link': false}])
+	+section._cart
+		+e.container.container
+			+e('form').form_cart
+				+e.content
+					+fieldset._cart.__fieldset
+						+e.header
+							+e('legend').legend Корзина
+						+e.content
+							+cart-list
+					+fieldset._cart._border.__fieldset
+						+e.header
+							+e('legend').legend Информация о доставке
+							+e('a').link(href = '#' title = 'Подробнее о доставке') Подробнее о доставке
+						+e.content
+							+cart-delivery
+					+fieldset._cart._border.__fieldset
+						+e.header
+							+e('legend').legend Выберите способ оплаты
+							+e('a').link(href = '#' title = 'Подробнее об оплате') Подробнее об оплате
+						+e.content
+							+cart-payment
+					+fieldset._cart._border.__fieldset
+						+e.header
+							+e('legend').legend Укажите контактные данные
+						+e.content
+							+cart-contacts
+				+e.aside
+					+e.total
+						+cart-total.js-cart

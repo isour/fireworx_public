@@ -1,0 +1,117 @@
+.tocart
+  display: flex
+  align-items: center
+  /* overflow: hidden */
+  &__count
+    flex: 0 0 100px
+    max-width: 100px
+    display: flex
+    align-items: center
+    padding-top: 0px
+  &__footer
+    flex: 0 0 120px
+    margin: 0
+    margin-left: auto
+    display: flex
+    flex-direction: column
+    padding-left: 13px
+  /* &__count
+    display: flex */
+  &_set &__footer
+    flex-basis: 150px
+  &_line &__footer
+    flex-basis: 140px
+  &__wrapper
+    flex: 0 0 36px
+    max-width: 36px
+  &__input
+    width: 100%
+    border: none
+    max-width: 34px
+    font-weight: bold
+    text-align: center
+    height: 32px
+    font-size: 14px
+    appearance: none
+    box-shadow: none
+    color: #ECECEC
+    text-align: center
+    background: none
+    -moz-appearance: textfield
+  &__icon
+    color: #9c9c9c
+    fill: currentColor
+    transition: color .4s
+  &__button
+    padding: 0
+    border-radius: 4px
+    background-color: transparent
+    border: 1px solid #838594
+    border-radius: 50%
+    cursor: pointer
+    flex: 0 0 32px
+    height: 32px
+    max-width: 32px
+    transition: background .4s
+    &:hover
+      background-color: var(--color_blue)
+      color: #fff
+  &__button:hover &__icon
+    color: #fff
+  &_cart &__footer
+    display: none
+  &_small &__button
+    max-width: 24px
+    height: 24px
+    flex: 0 0 24px
+    padding: 0
+  &_setinner &__footer
+    flex-basis: 180px
+  &_product
+    flex-wrap: wrap
+  &_product &__count
+    order: 1
+  &_product &__footer
+    order: 3
+    flex: 0 0 100%
+    padding: 0
+    padding-top: 20px
+  &_product &__footer2
+    order: 2
+    margin-left: auto
+  @mixin tablet_small
+    &__footer
+      flex-basis: 95px
+  @mixin tablet
+    &__footer
+      flex-basis: 110px
+    &_line &__footer
+      flex-basis: 180px
+      padding-left: 30px
+    &_big &__footer
+      flex-direction: row
+    &_big &__footer
+      .button
+        width: 220px
+    &_product
+      flex-wrap: nowrap
+    &_product &__count,
+    &_product &__footer,
+    &_product &__footer2
+      order: unset
+    &_product &__footer
+      flex: 1 1 calc(50% - 96px)
+      padding-top: 0
+      margin-left: 0
+      padding-left: 20px
+    &_product &__footer2
+      flex: 1 1 calc(50% - 96px)
+      margin-left: 0
+      padding-left: 20px
+
+input.tocart__input::-webkit-inner-spin-button,
+input.tocart__input::-webkit-outer-spin-button
+  -webkit-appearance: none
+  appearance: none
+  margin: 0
+  display: none

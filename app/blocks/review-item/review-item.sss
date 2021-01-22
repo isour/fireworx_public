@@ -1,0 +1,157 @@
+.review-item
+  display: block
+  --avatar: 60px
+  background-color: var(--color_light)
+  border-radius: 16px
+  padding: 30px 20px
+  &__placeholder
+    color: var(--color_orange)
+  &__header
+    display: flex
+    align-items: start
+    padding-left: 20px
+    position: relative
+  &__line
+    display: flex
+    margin-bottom: 15px
+  &__description
+    font-size: 300px
+    font-size: 12px
+    line-height: 1.4
+    color: var(--color_gray)
+  &__media
+    display: block
+    flex: 0 0 var(--avatar)
+    max-width: var(--avatar)
+    /* margin-right: 20px */
+    overflow: hidden
+  &__content
+    flex: 0 0 auto
+  &__icon
+    width: var(--avatar)
+    height: var(--avatar)
+  &__name
+    font-size: 20px
+    line-height: 1.2
+    flex: 1 1 100%
+    margin-bottom: 5px
+  &__img
+    overflow: hidden
+    display: flex
+    height: var(--avatar)
+    width: var(--avatar)
+    object-fit: cover
+    border: 1px solid var(--color_red)
+    border-radius: 50%
+  &__inner
+    display: flex
+    align-items: flex-start
+  &__date
+    font-size: 14px
+    color: #838594
+    margin-bottom: 7px
+  &__text
+    font-size: 14px
+    color: #838594
+    font-weight: 100
+    line-height: 1.42
+    -webkit-line-clamp: 5
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    overflow: hidden
+    text-overflow: ellipsis
+  &__text_full
+    -webkit-line-clamp: 0
+    max-height: none
+  &__source
+    margin-top: 20px
+    font-size: 14px
+  &__source-link
+    color: var(--color_red)
+    text-decoration: none
+  &__more
+    text-decoration: none
+    background: none
+    padding: 0
+    border: none
+    position: relative
+    cursor: pointer
+    color: var(--color_pink)
+    text-decoration: none
+    display: inline-block
+    vertical-align: baseline
+  &__more-arrow
+    right: 0
+    position: absolute
+  &__rating
+    align-self: center
+    margin-bottom: 10px
+  &__score
+    margin-top: 15px
+  &_full
+    padding: 0
+    background: none
+  &__imglist
+    margin: 0 -5px
+    margin-top: 10px
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+  &__imglist-item
+    flex: 0 0 50%
+    padding: 0 5px
+    margin-bottom: 10px
+  &__imgCount
+    margin-top: 10px
+    color: var(--color_orange)
+    text-transform: uppercase
+    text-decoration: underline
+  &__footer
+    margin-top: 26px
+  @mixin desktop
+    padding: 40px
+    min-height: 100%
+    position: relative
+    &__name
+      font-size: 24px
+    &__line
+      margin-bottom: 26px
+    &__header
+      flex: 1 1 auto
+      position: relative
+      padding-right: 120px
+    &__text
+      margin-bottom: 0
+      line-height: 1.42
+      font-size: 14px
+    &__rating
+      margin-bottom: 0
+      position: absolute
+      right: 0
+      top: 22px
+    &__text_full
+      -webkit-line-clamp: 0
+      line-clamp: 0
+      max-height: none
+    &__content
+      flex: 1 1 100%
+      max-width: 100%
+      padding-left: 80px
+    &_full
+      padding: 0
+      background: none
+    &__score
+      margin-top: -4px
+    &__source
+      width: 50%
+      padding-bottom: 10px
+      margin-top: 45px
+    &__footer
+      position: absolute
+      right: 40px
+      bottom: 32px
+      margin: 0
+    &__imglist-item
+      flex: 0 0 33.3333%
+      max-width: 33.3333%
+      padding: 0 5px

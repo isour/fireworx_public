@@ -1,0 +1,57 @@
+.filter
+  display: flex
+  flex-direction: column
+  height: 100%
+  background-color: #201E29
+  overflow-y: auto
+  &__header
+    display: flex
+    align-items: center
+    padding: 20px 20px
+    justify-content: space-between
+  &__icon_close
+    width: 15px
+    height: 15px
+    color: var(--color_pink)
+  &__close
+    background: none
+    padding: 5px
+    margin-right: -5px
+    margin: 0
+    border: none
+    cursor: pointer
+  &__title
+    font-size: 18px
+    font-weight: 500
+    color: #838594
+  &__content
+    padding: 20px
+    padding-top: 0
+    overflow-y: auto
+  &__fieldset
+    background-color: var(--color_light)
+    border-radius: 16px
+    padding: 26px 30px
+    margin-bottom: 10px
+  &__footer
+    display: flex
+    justify-content: space-between
+    padding: 20px
+    flex: 0 0 74px
+  &__show,
+  &__reset
+    flex: 0 0 48%
+    font-size: 14px
+  @mixin tablet
+    max-height: none
+    width: 100%
+    &__header
+      display: none
+    &__content
+      padding: 0
+      overflow: hidden
+    &__footer
+      display: none
+
+.opened_mobile_filter .layout__filter
+  transform: translateX(0)

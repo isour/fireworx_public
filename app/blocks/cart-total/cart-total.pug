@@ -1,0 +1,33 @@
+mixin cart-total()
+	+b.cart-total&attributes(attributes)
+		+e.header
+			+e.item
+				+e.line_1 Бесплатная доставка по Иркутску
+				+e.line_2 При покупке от 2 000 рублей
+			+e.item
+				+e.line_1 Гарантируем лучшую цену в городе
+				+e.line_2 Найдете дешевле - снизим цену
+		+e.price
+			+e.price-label Цена без скидки:
+			+e.price-value_big 23 100 ₽
+		+e.price
+			+e.price-label Скидка:
+			+e.price-value_pink 15%
+		+e.price
+			+e.price-label Ваша экономия:
+			+e.price-value_pink 3 000 ₽
+		+e.price
+			+e.price-label Цена со скидкой:
+			+e.price-value_total 20 100 ₽
+		+e.row
+			+form-checkbox({
+				"name": "cart-policy",
+				"id": "cart-policy",
+				"value": 1
+			})
+				+e('span').txt Прочитал и принимаю #[a(href="#").form-checkbox__link политику конфиденциальности]
+		+e.footer
+			+button({'type': 'button'})._big Оформить заказ
+		+e.error
+			+e.error-item - Не выбран способ доставки
+			+e.error-item - Не заполнены поля регистрации

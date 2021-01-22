@@ -1,0 +1,29 @@
+.promo-list
+  display: block
+  &__item
+    margin-top: 20px
+    &_0
+      margin-top: 0
+  &_order &__item
+    margin-top: 24px
+    &_0
+      margin-top: 0
+  @mixin tablet_small
+    lost-center: 100%
+    margin-top: -20px
+    &__item
+      lost-column: 6/12 2 10px
+      margin-top: 20px
+  @mixin tablet
+    lost-center: 100%
+    margin-top: 0
+    &__item
+      lost-column: 3/12 4 10px
+      margin-top: 0
+    &__item_0
+      margin-top: 0
+    &_order
+      margin-top: -20px
+    &_order &__item
+      lost-column: 1/1 1 0
+      margin-top: 20px

@@ -1,0 +1,22 @@
+.burger
+  padding: 0
+  background: none
+  border: none
+  min-width: 0
+  cursor: pointer
+  width: 32px
+  height: 32px
+  display: flex
+  justify-content: center
+  align-items: center
+  &__icon
+    color: #FF4054
+  &__icon_closethin
+    display: none
+  &.is-opened
+    position: relative
+    z-index: 100
+  &.is-opened &__icon_closethin
+    display: block
+  &.is-opened &__icon_burger
+    display: none

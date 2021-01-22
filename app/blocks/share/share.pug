@@ -1,0 +1,20 @@
+mixin share()
+	+b.share&attributes(attributes)
+		+e.header Поделитесь нашим сайтом в социальных сетях и #[strong получите дополнительно скидку 5%] на ремонт
+		+e.content
+			+e('a').link.js-share(
+				href='http://vk.com/share.php?url=<URL_TO_SHARE>&title=<TITLE>&description=<DESCRIPTION>&image=<IMAGE_URL>&noparse=true'
+				target='_blank')
+				+icon('vk').icon_vk
+			+e('a').link.js-share(
+				href='https://instagram.com/'
+				target='_blank')
+				+icon('instagram').icon_instagram
+			+e('a').link.js-share(
+				href='http://www.facebook.com/sharer/sharer.php?s=100&p%5Btitle%5D=<TITLE>&p%5Bsummary%5D=<DESCRIPTION>&p%5Burl%5D=<URL_TO_SHARE>&p%5Bimages%5D%5B0%5D=<IMAGE_URL>'
+				target='_blank')
+				+icon('fb').icon_fb
+			+e('a').link.js-share(
+				href='https://connect.ok.ru/offer?url=<URL_TO_SHARE>&title=<TITLE>&description=<DESCRIPTION>&imageUrl=<IMAGE_URL>'
+				target='_blank')
+				+icon('odn').icon_odn

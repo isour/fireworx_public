@@ -1,0 +1,14 @@
+mixin group-radio(data)
+	+b.group-radio&attributes(attributes)
+		if block
+			block
+		else
+			if data
+				each item, index in data.values
+					+e.item
+						+form-radio({
+							"name": data.name,
+							"id": data.id + index,
+							"label": item,
+							"class": data.class
+						})

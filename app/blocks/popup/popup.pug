@@ -1,0 +1,12 @@
+include ../icon/icon.pug
+
+mixin popup(data)
+	+b.popup&attributes(attributes)
+		+e.inner
+			if (data)
+				if (data.title)
+					+e.header
+						+e.title
+							+heading({'tag': 'h3'})._popup #{data.title}
+				+e.content
+					block

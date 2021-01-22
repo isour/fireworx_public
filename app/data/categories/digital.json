@@ -1,0 +1,198 @@
+[
+    {
+        "type": "vertical",
+        "name": "Техники Apple",
+        "imgList": [
+            {"src": "page-index/apple-1.png"},
+            {"src": "page-index/apple-2.png"}
+        ],
+        "imgClass": "iphone",
+        "animation": "curtain",
+        "subcats": [
+            {
+                "title": "iPhone"
+            },
+            {
+                "title": "iPad"
+            },
+            {
+                "title": "iMac"
+            },
+            {
+                "title": "AppleWatch"
+            },
+            {
+                "title": "MacMini"
+            }
+        ]
+    },
+    {
+        "type": "vertical",
+        "name": "Телефонов",
+        "imgList": [
+            {"src": "page-index/phone-1.png"},
+            {"src": "page-index/phone-2.png"},
+            {"src": "page-index/phone-3.png"}
+        ],
+        "imgClass": "phone",
+        "animation": "phones",
+        "subcats": [
+            {
+                "title": "iPhone"
+            },
+            {
+                "title": "Samsung"
+            },
+            {
+                "title": "Xiaomi"
+            },
+            {
+                "title": "Huawei"
+            },
+            {
+                "title": "Honor"
+            },
+            {
+                "title": "Ещё 7",
+                "class": "_more",
+                "more": true
+            }
+        ]
+    },
+    {
+        "name": "Ноутбуков",
+        "img": "page-index/notebook.png",
+        "animation": "scaledown",
+        "imgClass": "notebook",
+        "subcats": [
+            {
+                "title": "HP"
+            },
+            {
+                "title": "Samsung"
+            },
+            {
+                "title": "Lenovo"
+            },
+            {
+                "title": "ASUS"
+            },
+            {
+                "title": "Xiaomi"
+            },
+            {
+                "title": "Ещё 3",
+                "class": "_more",
+                "more": true
+            }
+        ]
+    },
+    {
+        "name": "Компьютеров",
+        "img": "page-index/pc.png",
+        "imgClass": "pc",
+        "animation": "scaledown",
+        "subcats": [
+            {
+                "title": "HP"
+            },
+            {
+                "title": "Samsung"
+            },
+            {
+                "title": "Lenovo"
+            },
+            {
+                "title": "ASUS"
+            },
+            {
+                "title": "Xiaomi"
+            },
+            {
+                "title": "Ещё 3",
+                "class": "_more",
+                "more": true
+            }
+        ]
+    },
+    {
+        "name": "Планшетов",
+        "img": "page-index/pad.png",
+        "imgClass": "pad",
+        "animation": "scaledown",
+        "subcats": [
+            {
+                "title": "iPad"
+            },
+            {
+                "title": "Samsung"
+            },
+            {
+                "title": "Lenovo"
+            },
+            {
+                "title": "HTC"
+            },
+            {
+                "title": "LG"
+            },
+            {
+                "title": "Xiaomi"
+            }
+        ]
+    },
+    {
+        "name": "Телевизоров",
+        "img": "page-index/tv.png",
+        "imgClass": "tv",
+        "animation": "scaledown",
+        "subcats": [
+            {
+                "title": "Samsung"
+            },
+            {
+                "title": "LG"
+            },
+            {
+                "title": "Xiaomi"
+            },
+            {
+                "title": "Sony"
+            },
+            {
+                "title": "Philips"
+            },
+            {
+                "title": "Panasonic"
+            }
+        ]
+    },
+    {
+        "type": "small",
+        "name": "Фотоаппаратов",
+        "imgClass": "camera",
+        "animation": "slideleft",
+        "img": "page-index/camera.png"
+    },
+    {
+        "type": "small",
+        "name": "Навигаторов",
+        "imgClass": "navigator",
+        "animation": "scaleleft",
+        "img": "page-index/navigator.png"
+    },
+    {
+        "type": "small",
+        "name": "Квадрокоптеров",
+        "imgClass": "quadrosmall",
+        "animation": "slideleft",
+        "img": "page-index/quadrocopter.png"
+    },
+    {
+        "type": "small",
+        "name": "Игровых консолей",
+        "imgClass": "console",
+        "animation": "scaleleft",
+        "img": "page-index/console.png"
+    }
+]

@@ -1,0 +1,19 @@
+mixin form-radio(data)
+	+b.form-radio&attributes(attributes)(class = typeof data.cl === "undefined" ? undefined : '_' + data.cl)
+		+e('label').label(for = typeof data.id === "undefined" ? undefined : data.id)
+			+e('input').input(
+				type = "radio",
+				checked = typeof state === "undefined" ? undefined : 'checked',
+				value = typeof data.value === "undefined" ? undefined : data.value,
+				id = typeof data.id === "undefined" ? undefined : data.id,
+				name = typeof data.name === "undefined" ? undefined : data.name
+			)
+			if data.icon
+				+e.fake
+				+e.border
+					+e.icon-wrap
+						+icon(data.icon)(class="icon_"+data.icon, fill="none")
+					+e.text #{data.label}
+			else
+				+e.fake
+				+e.text #{data.label}

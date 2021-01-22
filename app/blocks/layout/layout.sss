@@ -1,0 +1,180 @@
+.layout
+  display: block
+  &_catalog &__title
+    margin-bottom: 25px
+  &_catalog &__footer
+    margin-top: 21px
+  &__sort
+    background-color: var(--color_light)
+    padding: 20px
+    border-radius: 16px
+    margin-bottom: 20px
+  &__catalog
+    margin-bottom: 80px
+  &__categories
+    margin-bottom: 40px
+  &__discount,
+  &__sets,
+  &_catalog &__more
+    display: none
+  &__breadcrumbs
+    margin-bottom: 27px
+    margin-top: 13px
+  &__tags
+    margin: 0 -20px
+    padding: 0 20px
+    padding-bottom: 20px
+    margin-bottom: 20px
+    border-bottom: 1px solid #3F4961
+  &__more
+    width: 100%
+    margin-bottom: 20px
+  &__filter
+    position: fixed
+    top: var(--header_mobile)
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 10
+    background-color: rgba(14, 26, 23, .5)
+    padding-left: 30px
+    transform: translateX(100%)
+    transition: transform .4s
+  &__filter_opened
+    transform: translateX(0)
+  &__info
+    background-color: var(--color_light)
+    margin: 0 calc(-1 * var(--padding_mobile))
+    padding: 25px var(--padding_mobile)
+    margin-bottom: 20px
+  &__present
+    background-color: var(--color_light)
+    padding: 32px 20px
+    border-radius: 16px
+    margin-bottom: 20px
+  &__video
+    background-color: var(--color_light)
+    padding: 5px
+    border-radius: 16px
+    margin-bottom: 20px
+  &__row
+    margin-bottom: 26px
+  &__tabs
+    margin-bottom: 80px
+  &_contacts &__text
+    border-radius: 16px 16px 0 0
+    padding: 40px
+    overflow: hidden
+    background-color: var(--color_light)
+  &_contacts &__map
+    border-radius: 0 0 16px 16px
+    overflow: hidden
+  &__left
+    margin-bottom: 20px
+  &__title
+    text-align: center
+    padding-bottom: 24px
+    border-bottom: 1px solid #42414D
+    margin-bottom: 30px
+  &_catalog &__title
+    border: none
+    padding-bottom: 0
+    margin-bottom: 23px
+  &__question
+    background-color: var(--color_light)
+    padding: 35px 40px
+    padding-bottom: 40px
+    border-radius: 16px
+  &_profile &__aside
+    margin-bottom: 40px
+    max-width: none
+  @mixin tablet
+    &_product
+      display: flex
+      flex-wrap: wrap
+    &_product &__promo
+      flex: 0 0 360px
+      max-width: 360px
+      padding-right: 0
+    &_product &__info
+      flex: 0 0 100%
+      max-width: 100%
+    &_product &__tabs
+      flex: 1 1 auto
+    &_catalog
+      display: flex
+      flex-direction: row-reverse
+    &__aside
+      flex: 0 0 340px
+      max-width: 340px
+    &__filter
+      position: relative
+      transform: none
+      background: none
+      padding: 0
+      top: 0
+    &__catalog
+      overflow: hidden
+      flex: 1 1 auto
+      padding-left: 20px
+    &__sort
+      margin-bottom: 20px
+    &_contacts
+      display: flex
+      align-items: flex-start
+    &__question
+      flex: 0 0 460px
+      padding: 35px 80px
+    &_contacts &__left
+      flex: 0 0 calc(100% - 460px)
+      padding-right: 20px
+      overflow: hidden
+      margin-bottom: 0
+    &_contacts &__map
+      flex: 1 1 auto
+    &__discount,
+    &__sets,
+    &_catalog &__more
+      display: block
+    &__discount
+      margin-bottom: 20px
+    &__breadcrumbs
+      margin-top: 0
+    &_product &__row
+      flex: 0 0 100%
+    &__info
+      border-radius: 16px
+      margin: 0
+      margin-bottom: 20px
+      padding: 0
+    &__present
+      width: 100%
+    &__video
+      padding: 10px
+    &__row
+      lost-center: 100%
+    &__video,
+    &__additional
+      height: 100%
+      lost-column: 1/2 2 20px
+    &__text
+      display: flex
+    &__social
+      flex: 0 0 200px
+      max-width: 200px
+      display: flex
+      justify-content: flex-end
+    &__question &__title
+      text-align: center
+  @mixin desktop
+    &__title
+      text-align: left
+    &__video
+      margin-bottom: 0
+    &__breadcrumbs
+      margin-bottom: 20px
+    &__catalog
+      margin-bottom: 150px
+    &__present
+      padding-left: 30px
+      padding-right: 30px

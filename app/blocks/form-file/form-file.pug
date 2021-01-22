@@ -1,0 +1,13 @@
+mixin form-file(data)
+	+b.form-file&attributes(attributes)
+		if data.label
+			+e('label').label #{data.label}
+		+e.inner
+			+e('input').input(
+				type="file",
+				value=typeof data.value === "undefined" ? undefined : data.value,
+				id=typeof data.id === "undefined" ? undefined : data.id,
+				name=typeof data.id === "undefined" ? undefined : data.id
+			)
+			+e('input').fake(placeholder=typeof data.placeholder === "undefined" ? undefined : data.placeholder disabled)
+			+icon('file').icon_file

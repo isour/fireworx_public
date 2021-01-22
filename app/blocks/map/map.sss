@@ -1,0 +1,14 @@
+.map
+  display: block
+  position: relative
+  background-color: #fff
+  // [class*=-ground-pane]
+  //   filter: grayscale(1)
+  &__map
+    height: 260px
+  @mixin tablet_small
+    height: 100%
+    &__map
+      height: 100%
+    &_page
+      height: 530px

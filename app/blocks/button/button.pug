@@ -1,0 +1,7 @@
+mixin button(data = {type: 'button'})
+	if (data.type === 'link')
+		+b('a').button&attributes(attributes)(href=data.href, title=data.title)
+			block
+	else
+		+b('button').button&attributes(attributes)
+			block

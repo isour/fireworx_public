@@ -1,0 +1,7 @@
+include ../icon/icon
+
+mixin search()
+	+b('form').search&attributes(attributes)(action="#")
+		+e('input').input(type="search", placeholder="поиск в каталоге")
+		+e('button').submit
+			+icon('search').icon_search(fill="none")

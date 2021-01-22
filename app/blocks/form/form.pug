@@ -1,0 +1,13 @@
+include ../form-select/form-select.pug
+include ../form-input/form-input.pug
+include ../form-textarea/form-textarea.pug
+include ../form-checkbox/form-checkbox.pug
+include ../form-radio/form-radio.pug
+include ../form-file/form-file.pug
+include ../button/button.pug
+include ../label/label.pug
+include ../form-star/form-star.pug
+
+mixin form()
+	+b.form&attributes(attributes)
+		block

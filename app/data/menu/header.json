@@ -1,0 +1,31 @@
+[
+	{
+		"title": "Главная",
+		"url":   "/",
+		"class": "_active"
+	},
+	{
+		"title": "Акции",
+		"url":   "delivery"
+	},
+	{
+		"title": "Оптовикам",
+		"url":   "delivery"
+	},
+	{
+		"title": "Оплата и доставка",
+		"url":   "delivery"
+	},
+	{
+		"title": "Гарантия",
+		"url":   "delivery"
+	},
+	{
+		"title": "Отзывы",
+		"url":   "price"
+	},
+	{
+		"title": "Контакты",
+		"url":   "service"
+	}
+]

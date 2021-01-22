@@ -1,0 +1,128 @@
+.accordion
+  display: block
+  &__content
+    display: none
+  &_active &__icon
+    transform: rotate(90deg)
+  &_active &__content
+    display: block
+  &__header
+    display: flex
+    cursor: pointer
+    position: relative
+    padding: 15px 15px
+    background-color: #efefef
+    color: #000
+    overflow: hidden
+    margin-bottom: 9px
+    align-items: center
+  &__title
+    font-size: 22px
+    line-height: 1.18
+    padding-left: 20px
+  &__media
+    width: 24px
+    height: 24px
+    flex: 0 0 24px
+    background-color: #fff
+    border-radius: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+  &__icon
+    stroke: var(--color_orange)
+    stroke-width: 2px
+    width: 12px
+    height: 12px
+    transform: rotate(0)
+    transition: transform .4s
+  &__description
+    display: none
+  &__content
+    padding: 20px 0
+    border-radius: 0 0 4px 4px
+  &__text
+    margin-bottom: 20px
+  &__promo
+    margin-bottom: 20px
+  &__promo-item
+    margin-bottom: 20px
+  &__table
+    margin-bottom: 50px
+    display: block
+    overflow-x: auto
+  &__col_first
+    margin-bottom: 40px
+  @mixin tablet
+    &__header
+      padding: 20px 35px
+      align-items: center
+    &__content
+      border: 3px solid #c4c4c4
+      border-top: none
+      margin-bottom: 10px
+    &__row
+      lost-center: 100%
+      /* padding: 30px 40px */
+      margin-bottom: 20px
+    &__col
+      lost-column: 6/12
+    &__col_lg
+      lost-column: 12/12
+    &__col_30
+      lost-column: 6/24
+    &__col_35
+      lost-column: 9/24
+    &__col_40
+      lost-column: 4/12
+    &__col_60
+      lost-column: 8/12
+    &__col_first
+      lost-column: 2/24 0 0
+      /* background-color: #fff */
+      /* padding: 10px */
+    &__image
+      /* display: flex
+      justify-content: center
+      align-items: center */
+      margin-bottom: 20px
+    &__col_second
+      lost-column: 22/24
+      padding-left: 20px
+    &__description
+      display: block
+      font-size: 13px
+      color: #333
+      line-height: 1.6
+      flex: 0 0 335px
+      margin-left: 37px
+    &_fences &__col_first
+      lost-column: 2/12
+      background: none
+      align-items: flex-start
+    &_fences &__col_second
+      lost-column: 10/12
+    &__table
+      overflow: hidden
+    &_enclosure &__row
+      lost-center: 100%
+    &_enclosure &__col_first,
+    &_terrace &__col_first
+      lost-column: 4/12
+    &_enclosure &__col_second,
+    &_terrace &__col_second
+      lost-column: 8/12
+    &_enclosure &__col_third
+      lost-column: 12/12
+    &_enclosure &__heading
+      margin-bottom: 20px
+      padding-left: 0
+    &_enclosure &__text
+      font-size: 14px
+    &__center
+      text-align: center
+    @mixin desktop
+      &__content
+        padding-left: 60px
+        padding-right: 60px
+

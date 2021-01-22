@@ -1,0 +1,33 @@
+mixin product-additional()
+	+b.product-additional&attributes(attributes)
+		+e.stock
+			+e.stock-header Этот товар в наличии в 2 магазинах:
+			+e.stock-item
+				+e.stock-media
+					+icon('pin').icon_pin
+				+e.stock-text ул. Челябинская, 27
+			+e.stock-item
+				+e.stock-media
+					+icon('pin').icon_pin
+				+e.stock-text бульвар Постышева, 39
+		+e.cert
+			+e.cert-media
+				+image({'file': 'common/cert.jpg', 'alt': `Товар сертифицирован`}).product-additional__img
+			+e.cert-content
+				+e.cert-title Товар сертифицирован
+				+e.cert-text A00036/20
+		+e.payment
+			+e.payment-header Оплата при получении любым способом
+			+e.card
+				.grid.grid_card
+					.grid__item
+						+image({'file': 'common/visa.png', 'alt': 'Visa'}).footer__card
+					.grid__item.grid__item_2
+						+image({'file': 'common/mastercard.png', 'alt': 'Mastercard'}).footer__card
+					.grid__item
+						+image({'file': 'common/mir.png', 'alt': 'Мир'}).footer__card
+					.grid__item
+						+image({'file': 'common/cash.png', 'alt': 'Наличные'}).footer__card
+		+e.return
+			+e.return-header Возврат товара
+			+e.return-text Вернем деньги в случае неправильной работы изделия

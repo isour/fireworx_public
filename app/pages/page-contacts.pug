@@ -1,0 +1,129 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/icon/icon.pug
+include /blocks/fieldset/fieldset.pug
+include /blocks/cart-total/cart-total.pug
+include /blocks/cart-list/cart-list.pug
+include /blocks/breadcrumbs/breadcrumbs.pug
+include /blocks/cart-delivery/cart-delivery.pug
+include /blocks/cart-contacts/cart-contacts.pug
+include /blocks/cart-payment/cart-payment.pug
+include /blocks/social-list/social-list.pug
+
+
+block head
+	- var pageTitle = 'Контакты';
+
+block content
+	+section('promoline')._line
+	+section._breadcrumbs
+		+e.container.container
+			+breadcrumbs([{'title': 'Каталог', 'link': true, 'mobile': true}, {'title': 'Контакты', 'link': false}])
+	+section._page
+		+e.container.container
+			+e.header
+				+e.title
+					+heading({'tag': 'h2'})._h2 Адреса наших магазинов и контакты
+			+e.content
+				+layout._contacts
+					+e.left
+						+e.text
+							+contacts._page
+								+e.branch
+									+e('button').address(data-index = 0 type = 'button').js-mapbutton
+										+address._page
+											+e.media
+												+icon('pin').icon_pin
+											+e.content
+												+e.label Адрес:
+												+e.text ул. Челябинская, 27
+									+e.phone
+										+phone._page
+											+e.media
+												+icon('phone2').icon_phone2
+											+e.content
+												+e.label Телефон:
+												+e.text +7 (3952) 75-99-80
+									+e.email
+										+time._page
+											+e.media
+												+icon('calendar2').icon_calendar2
+											+e.content
+												+e.label Режим работы:
+												+e.text Пн - Вс:  9:00 - 21:00
+												+e('button').onmap.js-mapbutton(data-index = "0" type = 'button') Показать на карте
+								+e.branch
+									+e('button').address(data-index = 1 type = 'button').js-mapbutton
+										+address._page
+											+e.media
+												+icon('pin').icon_pin
+											+e.content
+												+e.label Адрес:
+												+e.text бульвар Постышева, 39
+									+e.phone
+										+phone._page
+											+e.media
+												+icon('phone2').icon_phone2
+											+e.content
+												+e.label Телефон:
+												+e.text +7 (3952) 75-99-80
+									+e.email
+										+time._page
+											+e.media
+												+icon('calendar2').icon_calendar2
+											+e.content
+												+e.label Режим работы:
+												+e.text Пн - Вс:  9:00 - 21:0
+												+e('button').onmap.js-mapbutton(data-index = "1" type = 'button') Показать на карте
+							+e.social
+								+social-list({"phone": "true"})._header._page
+						+e.map
+							+map._page
+					+e.question
+						+e.title
+							+heading({"tag": "h5"})._h5 Задать вопрос
+						+e.question-form
+							+form._feedback
+								+e.row
+									+form-input({
+										"type": "text",
+										"label": "Имя",
+										"placeholder": "Иван",
+										"name": "name",
+										"id": "feedback-name"
+									})._nolabel
+								+e.content
+									+e.col
+										+e.row
+											+form-input({
+												"type": "text",
+												"label": "Номер телефона",
+												"placeholder": "Номер телефона",
+												"name": "phone",
+												"id": "feedback-phone"
+											})._nolabel
+									+e.col
+										+e.row
+											+form-input({
+												"type": "phone",
+												"label": "E-mail",
+												"placeholder": "E-mail",
+												"name": "phone",
+												"id": "feedback-phone"
+											})._nolabel
+								+e.row
+									+form-textarea({
+										"label": "Ваш вопрос",
+										"placeholder": "Ваш вопрос",
+										"name": "question",
+										"id": "feedback-question"
+									})._nolabel
+								+e.row
+									+form-checkbox({
+										"name": "feedback-fz152",
+										"value": 1,
+										"checked": false
+									})
+										+e('span').txt Прочитал и принимаю #[a.form-checkbox__link(href="#") политику конфиденциальности]
+								+e.footer
+									+button._big.form__submit Отправить заявку

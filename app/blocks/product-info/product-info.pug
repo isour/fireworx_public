@@ -1,0 +1,40 @@
+include ../product-carousel/product-carousel.pug
+include ../product-cart/product-cart.pug
+include ../specifications/specifications.pug
+include ../tocart/tocart.pug
+include ../text-icon/text-icon.pug
+
+mixin product-info()
+	+b.product-info&attributes(attributes)
+		+e.content
+			+e.header
+				+heading({"tag": "h1"})._h2 Громовержец (2"х51) (Р8641)
+			+e.line
+				+e.sku Артикул: СП7960
+				+e.stock_green В наличии
+			+e.media
+				+product-carousel
+				+e('button').favorite(type = 'button')
+					+e.heart
+						+icon('heart').icon_heart
+						+icon('heartfill').icon_heartfill
+			+e.specifications
+				+specifications(getData('specifications/main'))
+			//- +e.stock_green В наличии
+			+e.cart
+				+product-cart
+		+e.block
+			+e.item
+				+text-icon({
+					"icon": "tag",
+					"title": "Нашли дешевле?",
+					"text": "Снизим цену и сделаем дополнительную скидку 5%"
+				})._product
+			+e.item
+				+text-icon({
+					"icon": "card",
+					"title": "Принимаем дисконтные карты других магазинов",
+					"text": "Скидка постоянным клиентам 10%"
+				})._product
+			+e('button').more.js-popup(type = 'button' data-url = 'popup-price.html') Показать цены на этот товар в зависимости от объема заказа
+		block

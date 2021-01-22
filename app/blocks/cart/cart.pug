@@ -1,0 +1,8 @@
+mixin cart()
+	+b('button').cart.js-popup&attributes(attributes)(aria-label = 'Корзина' data-url="popup-cart.html" type = 'button' data-class = 'fancybox-cart')
+		+e.media
+			+icon('cart').icon_cart
+			+e.count 2
+		+e.content
+			+e.label Корзина
+			+e.value 20 000 руб.

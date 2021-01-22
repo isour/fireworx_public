@@ -1,0 +1,11 @@
+mixin text-icon(data)
+	+b.text-icon&attributes(attributes)
+		block
+		+e.media
+			+icon(data.icon)(class='icon_' + data.icon)
+		+e.content
+			+e.title !{data.title}
+			if data.text
+				+e.text !{data.text}
+			if data.link
+				+e('a').link(href='#') #{data.link}

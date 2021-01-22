@@ -1,0 +1,78 @@
+@define-mixin retinaBackground $image, $ext: png
+  background-image: url('/icons/$(image).$(ext)')
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    background-image: url('/icons/$(image)@2x.$(ext)')
+
+@define-mixin ellipsis
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+@define-mixin scroll-style
+  -webkit-overflow-scrolling: touch
+  &::-webkit-scrollbar-button
+    background-image: url('')
+    background-repeat: no-repeat
+    width: 6px
+    height: 0
+  &::-webkit-scrollbar-track
+    background-color: #E7EBF1
+    border-radius: 4px
+  &::-webkit-scrollbar-thumb
+    border-radius: 4px
+    background-color: var(--color_dark)
+    cursor: pointer
+  &::-webkit-resizer
+    background-image: url('')
+    background-repeat: no-repeat
+    width: 6px
+    height: 0
+  &::-webkit-scrollbar
+    width: 6px
+    left: -100px
+
+@define-mixin tablet_small
+  @media (min-width: 768px)
+    @mixin-content
+
+@define-mixin tablet
+  @media (min-width: 992px)
+    @mixin-content
+
+@define-mixin tablet_only
+  @media (min-width: 992px) and (max-width: 1199px)
+    @mixin-content
+
+@define-mixin desktop_small
+  @media (min-width: 1024px)
+    @mixin-content
+
+@define-mixin desktop
+  @media (min-width: 1200px)
+    @mixin-content
+
+@define-mixin mobile
+  @media (max-width: 992px)
+    @mixin-content
+
+@define-mixin placeholder
+  &::-webkit-input-placeholder
+    color: #000
+    @mixin-content
+  &:-moz-placeholder
+    @mixin-content
+  &::-moz-placeholder
+    @mixin-content
+  &:-ms-input-placeholder
+    @mixin-content
+
+@define-mixin scroll
+  -webkit-overflow-scrolling: auto
+  overflow-x: auto
+
+@define-mixin ie
+  @media all and (-ms-high-contrast:none)
+    @mixin-content
+
+@define-mixin ff-gothic
+  font-family: 'BankGothic RUSS'

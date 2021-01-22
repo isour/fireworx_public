@@ -1,0 +1,62 @@
+@import "@fancyapps/fancybox/dist/jquery.fancybox.css"
+
+.compensate-for-scrollbar
+  margin-right: 0
+
+.fancybox-container
+  .fancybox-slide
+    padding: 0
+    @media (max-height: 576px)
+      padding-left: 19px
+      padding-right: 19px
+
+.fancybox-content
+  background: none
+  overflow-x: hidden
+  overflow-y: auto
+  /* padding: 20px
+  @mixin tablet
+    padding: 40px */
+
+.fancybox-infobar
+  mix-blend-mode: unset
+
+.fancybox-button
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 40px
+  height: 40px
+  background-color: var(--color_light)
+  border-radius: 50%
+  svg
+    color: var(--color_red)
+    width: 24px
+    height: 24px
+  @mixin tablet
+    width: 80px
+    height: 80px
+    svg
+      width: 44px
+      height: 44px
+
+.fancybox-slide--html .fancybox-close-small
+  top: 20px
+  right: 20px
+  @mixin tablet
+    top: 0
+    right: 0
+
+
+@mixin tablet
+  .fancybox-cart,
+  .fancybox-login
+    .fancybox-content
+      padding: 0
+    .fancybox-bg
+      background: transparent
+    .fancybox-button
+      display: none
+
+.fancybox-stage
+  width: 100vw

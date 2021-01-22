@@ -1,0 +1,33 @@
+extends /blocks/layout-popup/layout-popup.pug
+
+include /blocks/popup/popup.pug
+include /blocks/heading/heading.pug
+include /blocks/icon/icon.pug
+include /blocks/cart-list/cart-list.pug
+
+block content
+	+popup({"title": false})._cart
+		+e.header
+			+e.title Корзина
+			+e('button').clear(type = 'button') Очистить корзину
+		+e.content
+			+cart-list._short
+				+e.content
+					each item, index in [1,2,3]
+						+e.item
+							+e.media
+								+image({'file': 'temp/product-1.jpg', 'alt': 'Танец орла (1”, 150 залпов)'}).cart-list__img
+							+e.header
+								+e.category Батареи салютов
+								+e.title Танец орла (1”, 150 залпов)
+							+e.tocart
+								+tocart('cart')._small
+							+e.price 11 425 ₽/шт
+							+e('button').button_close(type = 'button').js-remove
+								+icon('close').icon_close
+		+e.footer
+			+e.total
+				+e.total-label Сумма заказа:
+				+e.total-price 155 800 ₽
+			+e.submit
+				+button({"type": "link"})._medium.section__link.js-popup(href = "#") В корзину

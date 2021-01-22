@@ -1,0 +1,10 @@
+extends /blocks/layout-popup/layout-popup.pug
+
+include /blocks/popup/popup.pug
+include /blocks/heading/heading.pug
+include /blocks/icon/icon.pug
+include /blocks/success/success.pug
+
+block content
+	+popup({"icon": "close", "title": "Заявка принята"})._success
+		+success

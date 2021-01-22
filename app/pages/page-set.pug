@@ -1,0 +1,36 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/icon/icon.pug
+include /blocks/promo-list/promo-list.pug
+include /blocks/product/product.pug
+include /blocks/brand/brand.pug
+include /blocks/text-icon/text-icon.pug
+include /blocks/form-callback/form-callback.pug
+include /blocks/contacts/contacts.pug
+include /blocks/catalog-sort/catalog-sort.pug
+include /blocks/pagination/pagination.pug
+include /blocks/breadcrumbs/breadcrumbs.pug
+include /blocks/filter/filter.pug
+include /blocks/tag/tag.pug
+include /blocks/sets/sets.pug
+include /blocks/set-content/set-content.pug
+
+block head
+	- var pageTitle = 'Каталог';
+
+block content
+	+section('promoline')._line
+	+section._breadcrumbs
+		+e.container.container
+			+breadcrumbs([{'title': 'Каталог', 'link': true, 'mobile': true}, {'title': 'Наборы пиротехники', 'link': false}, {'title': '«Гулять так гулять»', 'link': false}])
+	+section._setinner
+		+e.container.container
+			+e.header
+				+e.title
+					+heading({"tag": "h2"})._h2 Набор для Нового Года «Гулять так гулять»
+				+e.subtitle Отличный набор для большой и шумной компании
+			+e.content
+				+set-content
+	+section('order')
+	+section('reviews')
+	+section('map')

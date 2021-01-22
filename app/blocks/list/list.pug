@@ -1,0 +1,9 @@
+mixin list(data)
+	+b.list&attributes(attributes)
+		if block
+			block
+		else
+			if (data && data.length)
+				+e('ul').ul
+					each item, index in data
+						+e('li').item(class = typeof item.class === "undefined" ? '' : `_${item.class}`) !{item.title}

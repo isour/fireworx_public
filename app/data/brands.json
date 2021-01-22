@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Русский фейерверк",
+		"img": "brand-1.png",
+		"slick": true
+    },
+    {
+        "title": "ТСЗ",
+        "img": "brand-2.png",
+		"slick": true
+    },
+    {
+        "title": "Русская пиротехника",
+        "img": "brand-3.png",
+		"slick": true
+    },
+    {
+        "title": "Супер Салют",
+        "img": "brand-4.png",
+		"slick": true
+    },
+    {
+        "title": "Сибирская пиротехника",
+        "img": "brand-5.png",
+		"slick": true
+    }
+]

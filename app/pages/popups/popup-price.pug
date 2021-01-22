@@ -1,0 +1,10 @@
+extends /blocks/layout-popup/layout-popup.pug
+
+include /blocks/popup/popup.pug
+include /blocks/heading/heading.pug
+include /blocks/icon/icon.pug
+include /blocks/price/price.pug
+
+block content
+	+popup({"icon": "close", "title": "Цена на этот товар в зависимости от объема заказа"})._price
+		+price

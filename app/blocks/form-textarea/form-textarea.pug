@@ -1,0 +1,12 @@
+mixin form-textarea(data)
+	+b.form-textarea&attributes(attributes)
+		if data.label
+			+e('label').label #{data.label}
+		+e('textarea').textarea(
+			placeholder=typeof data.placeholder === "undefined" ? undefined : data.placeholder,
+			id=typeof data.id === "undefined" ? undefined : data.id,
+			name=typeof data.id === "undefined" ? undefined : data.id,
+			rows=typeof data.rows === "undefined" ? 3 : data.rows
+		)
+			if data.value
+				| #{data.value}

@@ -1,0 +1,23 @@
+include ../tocart/tocart.pug
+
+mixin product(data)
+	+b.product&attributes(attributes)
+		if block
+			block
+		else
+			if data.img
+				+e.media
+					+e.badge_red Акция
+					+image({'file': data.img, 'alt': data.title}).product__img
+					+e.popup
+						+button({"type": "button"}).product__popup-link.js-popup(data-url = 'popup-product.html') Быстрый просмотр
+			+e.content
+				+e.top
+					+e.category #{data.category}
+					+e.sku #{data.sku}
+				+e.title #{data.title}
+				if data.price_old
+					+e.price_old #{data.price_old} ₽/шт
+				+e.price #{data.price} ₽/шт
+			+e.footer
+				+tocart

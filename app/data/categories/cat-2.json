@@ -1,0 +1,34 @@
+[
+	{
+		"name": "Надувные ПВХ лодки",
+		"count": "28 товаров",
+		"price": "от 45 268 руб.",
+		"tocat": true,
+		"img": "page-index/cat-6.png",
+		"class": "category-item_big"
+	},
+	{
+		"name": "Аксессуары для лодок",
+		"count": "67 товаров",
+		"img": "page-index/cat-7.png",
+		"class": "category-item_small"
+	},
+	{
+		"name": "Прицепы для лодок",
+		"count": "567 товаров",
+		"img": "page-index/cat-8.png",
+		"class": "category-item_small"
+	},
+	{
+		"name": "Электро-оборудование",
+		"count": "567 товаров",
+		"img": "page-index/cat-9.png",
+		"class": "category-item_small"
+	},
+	{
+		"name": "Дистанционное управление",
+		"count": "567 товаров",
+		"img": "page-index/cat-10.png",
+		"class": "category-item_small"
+	}
+]

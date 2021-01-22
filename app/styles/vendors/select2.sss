@@ -1,0 +1,212 @@
+.select2-container
+  display: inline-block
+  margin: 0
+  position: relative
+  vertical-align: middle
+  outline: none
+  .selection
+    outline: none
+  .select2-selection--single
+    cursor: pointer
+    display: block
+    height: 48px
+    line-height: 48px
+    border: 1px solid #838594
+    background-color: transparent
+    border-radius: 24px
+    user-select: none
+    outline: none
+    .select2-selection__rendered
+      display: block
+      padding: 14px 20px
+      padding-right: 30px
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      font-size: 14px
+      line-height: 1.3
+    .select2-selection__clear
+      position: relative
+  &[dir="rtl"]
+    .select2-selection--single
+      .select2-selection__rendered
+        padding-right: 8px
+        padding-left: 20px
+  .select2-selection--multiple
+    cursor: pointer
+    display: block
+    min-height: 32px
+    user-select: none
+    .select2-selection__rendered
+      display: inline-block
+      overflow: hidden
+      padding-left: 8px
+      text-overflow: ellipsis
+      white-space: nowrap
+  .select2-search--inline
+    float: left
+    .select2-search__field
+      box-sizing: border-box
+      border: none
+      font-size: 100%
+      margin-top: 5px
+      padding: 0
+      &::-webkit-search-cancel-button
+        -webkit-appearance: none
+
+.select2-dropdown
+  display: block
+  position: absolute
+  left: -100000px
+  width: 100%
+  z-index: 1051
+
+.select2-results
+  margin: 0
+  background-color: var(--color_dark)
+  display: block
+  padding: 10px
+  border-radius: 16px
+  margin-top: 10px
+
+
+
+.select2-results__options
+  list-style: none
+  margin: 0
+  padding: 0
+  max-height: 470px
+  overflow-y: auto
+  -webkit-overflow-scrolling: auto
+  color: #333
+  line-height: 1
+  display: block
+  @mixin scroll-style
+
+
+.select2-results__option
+  padding: 8px 6px
+  user-select: none
+  color: #fff
+  font-size: 14px
+  &[aria-selected]
+    cursor: pointer
+  &.select2-results__option--highlighted
+    background-color: var(--color_light)
+
+.select2-container--open .select2-dropdown
+  left: 0
+
+.select2-container--open .select2-dropdown--above
+  border-bottom: none
+  border-bottom-left-radius: 0
+  border-bottom-right-radius: 0
+
+.select2-container--open .select2-dropdown--below
+  border-top: none
+  border-top-left-radius: 0
+  border-top-right-radius: 0
+
+.select2-search--dropdown
+  display: block
+  padding: 4px
+  display: none
+  .select2-search__field
+    padding: 4px
+    width: 100%
+    box-sizing: border-box
+    &::-webkit-search-cancel-button
+      -webkit-appearance: none
+  &.select2-search--hide
+    display: none
+
+.select2-close-mask
+  border: 0
+  margin: 0
+  padding: 0
+  display: block
+  position: fixed
+  left: 0
+  top: 0
+  min-height: 100%
+  min-width: 100%
+  height: auto
+  width: auto
+  opacity: 0
+  z-index: 99
+  // styles required for IE to work
+  background-color: #fff
+  filter: alpha(opacity=0)
+
+.select2-hidden-accessible
+  border: 0 !important
+  clip: rect(0 0 0 0) !important
+  -webkit-clip-path: inset(50%) !important
+  clip-path: inset(50%) !important
+  height: 1px !important
+  overflow: hidden !important
+  padding: 0 !important
+  position: absolute !important
+  width: 1px !important
+  white-space: nowrap !important
+
+
+.is-error
+  .select2-container
+    .select2-selection--single
+      border-color: red
+
+.select2-container--showinput
+  .select2-search--dropdown
+    display: block
+  .select2-search--dropdown
+    margin: 0 -10px
+    background-color: white
+    padding: 10px
+    padding-bottom: 0
+    border: 10px solid #F6F6F6
+    border-bottom: none
+    display: block
+  .select2-results
+    padding-top: 0
+    border-top: none
+  .select2-search__field
+    width: 100%
+    color: #000
+    padding: 13px 20px
+    border-radius: 0
+    font-size: 14px
+    line-height: 1.3
+    font-weight: normal
+    border: 1px solid var(--color_gray)
+    background-color: #fff
+    font-weight: 500
+
+.select2-container--disabled
+  opacity: 0.7
+  cursor: default
+  .select2-selection--single
+    cursor: default
+
+.level-1
+  font-weight: bold
+
+.level-2
+  font-weight: 500
+
+.level-3
+  padding-left: 50px
+  display: block
+  font-weight: normal
+
+.level-4
+  padding-left: 70px
+  display: block
+  font-weight: normal
+
+.select-icon
+  display: flex
+  &__media
+    flex: 0 0 30px
+    position: relative
+    top: -2px

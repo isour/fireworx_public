@@ -1,0 +1,5 @@
+mixin tag(data)
+	+b('button').tag&attributes(attributes)(type = 'button')
+		block
+		+e.text #{data.title}
+		+icon('close').icon_close

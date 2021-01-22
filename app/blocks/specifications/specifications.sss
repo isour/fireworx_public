@@ -1,0 +1,37 @@
+.specifications
+  display: block
+  &__list
+    list-style: none
+    padding: 0
+    margin: 0
+  &__item
+    display: flex
+    font-size: 14px
+    margin-bottom: 11px
+    align-items: flex-end
+    line-height: 1.14
+    background-image: resolve('common/dots.png')
+    background-repeat: repeat-x
+    background-position: 0 80%
+  &__label
+    font-size: 14px
+    padding-right: 10px
+    color: #838594
+    background-color: var(--color_light)
+  &__value
+    flex: 0 0 50%
+    text-align: left
+    font-size: 14px
+    padding-left: 5px
+    margin-left: auto
+    background-color: var(--color_light)
+  &_table
+    max-width: 450px
+  &_table &__item
+    margin-bottom: 13px
+  &_table &__label
+    font-size: 16px
+    /* flex: 0 0 60% */
+  &_table &__value
+    flex: 0 0 40%
+    font-size: 16px

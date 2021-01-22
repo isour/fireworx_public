@@ -1,0 +1,21 @@
+include ../form/form.pug
+include ../sort/sort.pug
+
+mixin catalog-sort()
+	+b.catalog-sort&attributes(attributes)
+		+e.header
+			+button(type = "submit")._filter.js-filter
+				+icon('filter').icon_filter
+				| Фильтр
+		+e.sort
+			+form-select({
+				"label": "Сортировка:",
+				"name": "sort",
+				"values": ["По возрастанию цены", "По убыванию цены"]
+			})._nolabel._sort.js-select
+		+e.found Найдено 856 товаров
+		+e.view
+			+e('button').button_list._active
+				+icon('list').icon_list
+			+e('button').button_grid
+				+icon('grid').icon_grid

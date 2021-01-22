@@ -1,0 +1,66 @@
+.product-cart
+  display: block
+  &__priceold
+    font-size: 18px
+    color: #838594
+    line-height: 1
+    margin-bottom: 5px
+    text-decoration: line-through
+  &__line
+    display: flex
+    align-items: center
+    margin-bottom: 25px
+  &__sale
+    flex: 0 0 95px
+    color: var(--color_pink)
+    font-weight: 500
+    text-align: right
+    line-height: 1.18
+  &__price
+    flex: 1 1 auto
+    font-size: 36px
+    line-height: 1
+    font-weight: 500
+    color: #ECECEC
+  &__price-value
+    font-size: 30px
+    font-weight: bold
+  &__price-label
+    font-weight: normal
+    margin-left: .2em
+  &__total
+    flex: 0 0 100%
+    display: flex
+    align-items: center
+  &__total-label
+    flex: 0 0 50%
+    background-position: 0 calc(100% - 3px)
+    background-repeat: repeat-x
+    font-size: 14px
+  &__total-bg
+    background-color: var(--color_light)
+    position: relative
+    top: 2px
+  &__total-value
+    font-size: 20px
+    font-weight: bold
+  &__total-from
+    margin-right: .2em
+    font-size: 18px
+    color: #666C72
+  &__submit
+    margin-top: 25px
+    flex: 0 0 100%
+    display: flex
+    flex-direction: column
+  @mixin tablet
+    &__sale
+      flex: 0 0 170px
+      text-align: left
+    &__line
+      align-items: baseline
+    &__price
+      flex: 0 0 auto
+      padding-right: 20px
+    &__tocart
+      max-width: 560px

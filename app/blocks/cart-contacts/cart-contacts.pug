@@ -1,0 +1,53 @@
+mixin cart-contacts()
+	+b.cart-contacts&attributes(attributes)
+		block
+		+e.row
+			+e.col_30
+				+form-input({
+					"type": "text",
+					"label": "Фамилия",
+					"id": "cart-surname",
+					"name": "cart-surname",
+					"placeholder": "Иванов"
+				})._nolabel
+			+e.col_30
+				+form-input({
+					"type": "text",
+					"label": "Имя",
+					"id": "cart-name",
+					"name": "cart-name",
+					"placeholder": "Иван"
+				})._nolabel
+			+e.col_30
+				+form-input({
+					"type": "text",
+					"label": "Отчество",
+					"id": "cart-middlename",
+					"name": "cart-middlename",
+					"placeholder": "Иванович"
+				})._nolabel
+		+e.row
+			+e.col_30
+				+form-input({
+					"type": "phone",
+					"label": "Номер телефона",
+					"id": "cart-phone",
+					"name": "cart-phone",
+					"placeholder": "8 (___) ___ - __ - __"
+				})._nolabel
+			+e.col_30
+				+form-input({
+					"type": "email",
+					"label": "E-mail",
+					"id": "cart-email",
+					"name": "cart-email",
+					"placeholder": "Ivanov@mail.ru"
+				})._nolabel
+		+e.row
+			+e.col_100
+				+form-textarea({
+					"id": "cart-comments",
+					"label": "Комментарий к заказу",
+					"name": "cart-comments",
+					"placeholder": "Комментарий к заказу"
+				})._nolabel

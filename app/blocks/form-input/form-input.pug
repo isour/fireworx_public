@@ -1,0 +1,40 @@
+include ../icon/icon.pug
+
+mixin form-input(data)
+	+b.form-input&attributes(attributes)
+		if data.label
+			+e('label').label(for = typeof data.id === "undefined" ? undefined : data.id) #{data.label}
+		if (!data.slider)
+			+e.inner
+				if data.prefix
+					+e.prefix #{data.prefix}
+				if (data.icon)
+					+e.media
+						+icon(data.icon)(class = 'icon_' + data.icon)
+				+e('input').input(
+					type=typeof data.type === "undefined" ? undefined : data.type,
+					data-mask=typeof data.mask === "undefined" ? undefined : data.mask,
+					placeholder=typeof data.placeholder === "undefined" ? undefined : data.placeholder,
+					value=typeof data.value === "undefined" ? undefined : data.value,
+					id=typeof data.id === "undefined" ? undefined : data.id,
+					name=typeof data.id === "undefined" ? undefined : data.id
+				)
+		else
+			//- +e.label
+				+e('span').label-text от
+				+e('span').label-from #{data.slider_from}
+				+e('span').label-units #{data.slider_units}
+				+e('span').label-delimeter —
+				+e('span').label-text до
+				+e('span').label-to #{data.slider_to}
+				+e('span').label-units #{data.slider_units}
+			+e('input').slider(
+				type = "text"
+				data-sval = data.slider_val
+				data-smax = data.slider_max
+				data-smin = data.slider_min
+				data-sstep = data.slider_step
+				data-units = data.slider_units
+				data-sfrom = data.slider_from
+				data-sto = data.slider_to
+				)

@@ -1,0 +1,16 @@
+mixin text-image(data)
+	+b.text-image&attributes(attributes)
+		if data.img
+			+e.media
+				+image({'file': data.img, 'alt': data.title}).text-image__image
+				if data.count
+					+e.count #{data.count}
+		+e.content
+			+e.title #{data.title}
+			if data.description
+				+e.description #{data.description}
+			if data.link
+				+e('a').link(href='#') #{data.link}
+			if data.img2
+				+e.media_2
+					+image({'file': data.img2, 'alt': data.title}).text-image__image_2

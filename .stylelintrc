@@ -1,0 +1,8 @@
+# .stylelintrc
+{
+  "extends": "stylelint-config-sugarss-recommended",
+  "rules": {
+  	    "indentation": null,
+  	    "number-leading-zero": null
+  }
+}

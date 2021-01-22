@@ -1,0 +1,76 @@
+.set-content
+  display: block
+  &__header
+    background-color: var(--color_light)
+    border-radius: 16px
+    padding: 37px 30px
+    padding-top: 0
+    overflow: hidden
+    line-height: 1.2
+  &__media
+    margin: 0 -30px
+    margin-bottom: 23px
+  &__item
+    margin-bottom: 20px
+  &__line_1
+    font-size: 14px
+    color: #ECECEC
+    font-weight: 500
+  &__line_2
+    font-size: 12px
+    color: #838594
+  &__price
+    display: flex
+    align-items: baseline
+    justify-content: space-between
+    background-image: resolve('common/dots.png')
+    background-repeat: repeat-x
+    background-position: 0 80%
+    margin-bottom: 18px
+  &__price-label
+    font-size: 14px
+    color: #838594
+    background-color: var(--color_light)
+    padding-right: 5px
+  &__price-value
+    background-color: var(--color_light)
+    padding-left: 5px
+  &__price-value_total
+    color: #fff
+    font-size: 24px
+    font-weight: 500
+  &__price-value_big
+    color: #838594
+    font-size: 18px
+    font-weight: 500
+  &__price-value_pink
+    color: var(--color_pink)
+    font-size: 18px
+    font-weight: 500
+  &__row
+    margin-top: 24px
+    border-top: 1px solid #3E3D49
+    padding-top: 28px
+    padding-bottom: 27px
+  &__tocart
+    margin-bottom: 20px
+    padding-top: 30px
+    border-top: 1px solid #43424E
+    margin-top: 23px
+  &__policy
+    padding-top: 25px
+    margin-top: 23px
+    border-top: 1px solid #D8DCE4
+    margin-bottom: 25px
+  &__footer
+    display: flex
+    flex-direction: column
+  @mixin tablet
+    display: flex
+    align-items: flex-start
+    &__header
+      flex: 0 0 340px
+      max-width: 340px
+    &__list
+      padding-right: 20px
+      flex: 1 1 auto

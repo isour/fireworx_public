@@ -1,0 +1,10 @@
+include ../button/button.pug
+
+mixin success()
+	+b.success&attributes(attributes)
+		block
+		+e.media
+			+icon('confirmation').icon_confirmation
+		+e.content
+			+e.title Ожидайте, мы перезвоним вам в течение 5 минут
+			+button({"type": "button"})._big.success__submit(data-fancybox-close) Закрыть

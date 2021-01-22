@@ -1,0 +1,38 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/category-item/category-item.pug
+include /blocks/product/product.pug
+
+block head
+	- var pageTitle = 'Главная';
+
+block content
+	+section._hero
+		+e.content
+			.grid.grid_hero.js-hero
+				each item, index in [1,2,3]
+					.grid__item
+						+hero({
+							"preTitle": "С бесплатной доставкой по Иркутску",
+							"title": "Пиротехнические изделия",
+							"big": "на любой праздник и бюджет",
+							"img": "page-index/hero.jpg",
+							"imgAlt": "Пиротехнические изделия на любой праздник и бюджет"
+						})
+		+e.container_dots.container
+	+section('promo')
+	+section._service
+		+e.container.container
+			+e.content
+				.grid.grid_catalog
+					each item, index in getData('categories/cat-1')
+						.grid__item(class = `grid__item_${index}`)
+							+category-item(item)(class = item.class)
+
+	+section('brands')
+	+section('products')
+	+section('sets')
+	+section('order')
+	+section('reviews')
+	+section('about')
+	+section('map')

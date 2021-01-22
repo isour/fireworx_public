@@ -1,0 +1,127 @@
+mixin sections(data)
+	+section._questions
+		+e.container.container
+			+e.content
+				+e.media
+					+image({'file': 'common/questions.png', 'alt': 'Вопросы'}).section__image
+				+e.form
+					+form._questions(action = '#')
+						+e.col_first
+							+e.title
+								+heading({'tag': 'h2'})._questions Остались вопросы?
+							+e.description Закажите обратный звонок. Наш менеджер перезвонит в течение 5-и минут и расскажет подробнее о продукции и сервисе.
+						+e.col_second
+							+e.input
+								+form-input({
+									"type": "text",
+									"placeholder": "Ваше имя",
+									"value": "Аркадий Пузошлепов",
+									"id": "question-name",
+									"name": "question-name"
+								})._bordered
+							+e.input
+								+form-input({
+									"type": "tel",
+									"placeholder": "Номер телефона",
+									"id": "question-phone",
+									"name": "question-phone"
+								})._bordered
+							+e.checkbox
+								+form-checkbox({
+									"id": "question-fz152",
+									"name": "question-fz152"
+								}) Согласен с правилами использования личных данных
+							+e.button
+								+button({'type': 'button'})._arrow._arrowsmall Отправить заявку
+	if !sectionPhotoHide
+		+section._portfolio(id = "portfolio")
+			+e.header
+				+e.container.container
+					+heading({'tag': 'h2'})._h2 Фотографии наших работ
+			+e.content
+				+e.container.container
+					+tabs._catalog
+						+e.header
+							+e('button').button_active.js-tab(data-tab = ".tabs__tab_portfolio1" type = 'button') Заборы и ограждения
+							+e('button').button_second.js-tab(data-tab = ".tabs__tab_portfolio2" type = 'button') ПВХ-конструкции
+							+e('button').button_second.js-tab(data-tab = ".tabs__tab_portfolio3" type = 'button') Ворота
+							+e('button').button_second.js-tab(data-tab = ".tabs__tab_portfolio4" type = 'button') Фундаменты
+						+e.content
+							+e.tab_portfolio1._active
+								+e.grid
+									.grid.grid_portfolio.js-portfolio.slick-slider_side
+										each item, index in getData('portfolio')
+											.grid__item(class = `grid__item_${index}`)
+												+portfolio-item
+													+text-image(item)._portfolio
+							+e.tab_portfolio2
+								+e.grid
+									.grid.grid_portfolio.js-portfolio.slick-slider_side
+										each item, index in getData('portfolio')
+											.grid__item(class = `grid__item_${index}`)
+												+portfolio-item
+													+text-image(item)._portfolio
+							+e.tab_portfolio3
+								+e.grid
+									.grid.grid_portfolio.js-portfolio.slick-slider_side
+										each item, index in getData('portfolio')
+											.grid__item(class = `grid__item_${index}`)
+												+portfolio-item
+													+text-image(item)._portfolio
+							+e.tab_portfolio4
+								+e.grid
+									.grid.grid_portfolio.js-portfolio.slick-slider_side
+										each item, index in getData('portfolio')
+											.grid__item(class = `grid__item_${index}`)
+												+portfolio-item
+													+text-image(item)._portfolio
+	+section._reviews
+		+e.container.container
+			+e.header
+				+heading({'tag': 'h2'})._h2 Благодарности и отзывы
+				+e('button').more.js-popup(data-url = 'popup-review.html')
+					+icon('next')._next
+					| написать свой отзыв
+		+e.content
+			+e.container.container
+				+tabs._reviews
+					+e.header
+						+e('button').button_active.js-tab(data-tab = ".tabs__tab_service1" type = 'button') Частные лица
+						+e('button').button_second.js-tab(data-tab = ".tabs__tab_service2" type = 'button') Компании и гос. учреждения
+					+e.content
+						+e.tab_service1._active
+							+e.grid
+								.grid.grid_reviews.js-reviews.slick-slider_side
+									each item, index in getData('reviews')
+										.grid__item(class = `grid__item_${index}`)
+											+review-item(item)
+						+e.tab_service2
+							+e.grid
+								.grid.grid_tablet3.grid_mobile1
+									| 123
+		+e.footer
+			+e.container.container
+				+e('button').more.js-popup(data-url = 'popup-review.html')
+					+icon('next')._next
+					| написать свой отзыв
+	+section._map
+		+e.contacts
+			+e.container.container
+				+e.block
+					+e.header
+						+e.logo
+							+logo._map
+						+e.slogan
+							+slogan._map
+					+e.content
+						+contacts._contacts
+							+e.phone
+								+phone._footer
+							+e.address
+								+address._contacts
+							+e.email
+								+email._contacts
+							+e.order
+								+button({'type': 'button', 'data-url': 'popup-callback.html'})._arrow._arrowwhite Заказать звонок
+		+e.map
+			+map

@@ -1,0 +1,14 @@
+mixin parts(data)
+	if (data == 'search')
+		+form._search
+			+e.input
+				+form-input({
+					"type": "search",
+					"label": "Искать в каталоге пиротехники...",
+					"placeholder": "Искать в каталоге пиротехники...",
+					"name": "search-string",
+					"id": "search-string"
+				})._nolabel._search
+			+e.footer
+				+e('button').button(type = 'button')
+					+icon('search').icon_search

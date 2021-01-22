@@ -1,0 +1,18 @@
+.rating
+  display: flex
+  &__item
+    display: flex
+    margin-left: 6px
+  &__icon
+    height: 16px
+    width: 16px
+    color: #dbd7d7
+    fill: currentColor
+  &__item_0
+    margin-left: 0
+  &__item_active &__icon
+    color: var(--color_yellow)
+  @mixin tablet
+    &__icon
+      height: 16px
+      width: 16px

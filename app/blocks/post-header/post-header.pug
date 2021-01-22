@@ -1,0 +1,10 @@
+mixin post-header()
+	+b.post-header&attributes(attributes)
+		block
+		+e.container.container
+			+e.logo
+				+logo._header
+			+e.phone
+				+phone._postheader
+					+e('a').link(href="tel:+73952759980") +7 (3952) 75-99-80
+					+e('button').callback.js-popup(data-url="popup-callback.html" title="Вы можете заказать обратный звонок. Наш менеджер позвонит в удобное для Вас время в ближайший рабочий день.") Заказать звонок

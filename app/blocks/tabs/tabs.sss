@@ -1,0 +1,130 @@
+.tabs
+  display: block
+  &__header
+    display: flex
+    overflow-x: auto
+    position: relative
+    margin: 0 calc(var(--padding_mobile) * -1)
+    margin-bottom: 20px
+    &::after
+      content: ''
+      display: block
+      flex: 0 0 var(--padding_mobile)
+  &__button
+    background: none
+    padding: 0
+    margin: 0
+    border: none
+    font-size: 14px
+    line-height: 1.375
+    color: var(--color_gray)
+    margin-left: var(--padding_mobile)
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: left
+    position: relative
+    transition: color .4s
+    cursor: pointer
+    flex: 0 0 auto
+    padding: 13px 0
+    padding-bottom: 20px
+    margin-right: 25px
+    margin-bottom: 8px
+    position: relative
+  &__button_active,
+  &__button:hover
+    color: #ECECEC
+    &::after
+      display: block
+      background-color: #ff5a4c
+      background-image: -webkit-linear-gradient(left, #ff5a4c, #ff1660)
+      background-image: linear-gradient(to right, #ff5a4c, #ff1660)
+      content: ''
+      margin: auto
+      margin-bottom: auto
+      width: 100%
+      height: 3px
+      box-shadow: 0 0 6px #ff6047
+      border-radius: 2px
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 3px
+  &__tab
+    display: none
+    margin: 0 calc(-1 * var(--padding_mobile))
+  &__tab_active
+    display: block
+  &_reviews &__header
+    align-items: flex-stretch
+    margin-bottom: 32px
+  &_reviews &__button
+    font-weight: 500
+    display: flex
+    flex-direction: column
+  /* &__button-office
+    font-size: 18px
+    margin-bottom: 9px
+  &__button-rating
+    margin-bottom: 10px
+    opacity: .5 */
+  /* &__button_active &__button-reviews
+    color: #666
+    font-weight: normal
+  &__button_active &__button-rating
+    opacity: 1 */
+  /* &_reviews &__content
+    margin: 0 calc(var(--padding_mobile) * -1) */
+  /* &__dots
+    margin-top: 29px
+  &_catalog &__grid
+    margin-left: calc(var(--padding_mobile) * -1)
+    margin-right: calc(var(--padding_mobile) * -1) */
+  &_product &__header
+    align-items: flex-start
+    margin-bottom: 9px
+  &_product &__button
+    flex: 0 0 85px
+  &_product &__tab
+    background-color: var(--color_light)
+    margin: 0 calc(-1 * var(--padding_mobile))
+    padding: 0 var(--padding_mobile)
+    padding-top: 35px
+    padding-bottom: 25px
+  &_product &__title
+    margin-bottom: 20px
+  /* &__spec
+    border-bottom: 1px solid #43424E
+    padding-bottom: 22px
+    margin-bottom: 35px */
+  &__text
+    padding-top: 35px
+    border-top: 1px solid #43424E
+    margin-top: 33px
+    p
+      margin-top: 0
+      margin-bottom: 20px
+  @mixin tablet
+    &__button
+      font-size: 14px
+    &_catalog &__grid
+      margin: 0
+    &_product &__button
+      font-size: 18px
+      flex-basis: auto
+    &_product &__header
+      margin-bottom: 40px
+    &_product &__tab
+      margin: 0
+      padding: 55px 40px
+      border-radius: 16px
+  @media (min-width: 1350px)
+    &_products &__header
+      justify-content: center
+  @mixin desktop
+    &_products &__header
+      margin-bottom: 35px
+    &_products &__button
+      font-size: 18px
+      margin: 0 15px

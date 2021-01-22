@@ -1,0 +1,128 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/icon/icon.pug
+include /blocks/promo-list/promo-list.pug
+include /blocks/product/product.pug
+include /blocks/brand/brand.pug
+include /blocks/text-icon/text-icon.pug
+include /blocks/form-callback/form-callback.pug
+include /blocks/category-item/category-item.pug
+include /blocks/contacts/contacts.pug
+include /blocks/catalog-sort/catalog-sort.pug
+include /blocks/pagination/pagination.pug
+include /blocks/breadcrumbs/breadcrumbs.pug
+include /blocks/filter/filter.pug
+include /blocks/tag/tag.pug
+include /blocks/discount/discount.pug
+
+block head
+	- var pageTitle = 'Каталог';
+
+block content
+	+section('promoline')._line
+	+section._catalog
+		+e.container.container
+			+layout._catalog
+				+e.catalog
+					+e.breadcrumbs
+						+breadcrumbs([{'title': 'Каталог', 'link': true, 'mobile': true}, {'title': 'Корзина', 'link': false}])
+					+e.header
+						+e.title
+							+heading({'tag': 'h2'})._h2 Каталог пиротехники
+						+e.categories
+							.grid.grid_categories
+								each item, index in getData('categories/catalog')
+									.grid__item(class = `grid__item_${index}`)
+										+category-item(item)(class = item.class)
+						+e.sort
+							+e.tags
+								.grid.grid_tags
+									.grid__item
+										+tag({"title": "Мощные"})._active
+									.grid__item
+										+tag({"title": "25-50 выстрелов"})
+									.grid__item
+										+tag({"title": "Громкие"})
+									.grid__item
+										+tag({"title": "Длительные от 2 минут"})
+							+catalog-sort
+					+e.content
+						.grid.grid_line
+							each item, index in [1,2,3,4,5,6,7]
+								.grid__item
+									+product._line
+										+e.media
+											+image({'file': 'temp/product-1.jpg', 'alt': 'аки расширительные Flamco Solar'}).product__img
+											+e('button').favorite(type = 'button')
+												+e.heart
+													+icon('heart').icon_heart
+													+icon('heartfill').icon_heartfill
+											+e.badge_red Акция
+											+e.popup
+												+button({"type": "button"}).product__popup-link.js-popup(data-url = 'popup-product.html') Быстрый просмотр
+										+e.params
+											+e.param
+												+e('span').param-label Время работы:
+												+e('span').param-value до 40 сек.
+											+e.param
+												+e('span').param-label Кол-во выстрелов:
+												+e('span').param-value 36
+											+e.param
+												+e('span').param-label Высота:
+												+e('span').param-value до 35 метров
+											+e.param
+												+e('span').param-label Калибр:
+												+e('span').param-value 0,8"
+										+e('a').category(href = '#') Батареи салютов
+										+e.title
+											+e('a').title-link(href = "#") Танец орла (1”, 150 залпов)
+										+e.line
+											+e.sku Артикул: СП7960
+											+e.stock_green В наличии
+										+e.footer
+											+e.price_old 12 425 ₽/шт
+											+e.price 11 425 ₽/шт
+											+e.tocart
+												+tocart._line
+					+e.footer
+						+button({type: 'button'})._bordergray._big.layout__more Показать еще
+						+pagination
+				+e.aside
+					+e.filter.js-filter
+						+filter
+					+e.discount
+						+discount
+					+e.sets
+						.grid.grid_setvertical.js-setvertical
+							.grid__item
+								+set({
+									"pretitle": "Набор для Нового Года",
+									"title": "«Пошумим немного»",
+									"contents": [
+										{"title": "Батарея салютов (24 залпа, 1 шт.)"},
+										{"title": "Петарды (1 уп., 36 шт.)"},
+										{"title": "Бенгальские огни малые (10 шт.)"}
+									],
+									"img": "temp/set-1.png",
+									"price": "2 890",
+									"hideCart": true
+								})._vertical
+							.grid__item
+								+set({
+									"pretitle": "Набор для Нового Года",
+									"title": "«Пошумим немного»",
+									"contents": [
+										{"title": "Батарея салютов (24 залпа, 1 шт.)"},
+										{"title": "Петарды (1 уп., 36 шт.)"},
+										{"title": "Бенгальские огни малые (10 шт.)"}
+									],
+									"img": "temp/set-3.png",
+									"price": "2 890",
+									"hideCart": true
+								})._vertical
+					+e.more
+						+button({'type': 'link'})._big._bordergray.layout__button(href = '#' title = 'Смотреть все подборки') Смотреть все подборки
+	+section('products')
+	+section('order')
+	+section('reviews')
+	+section('map')

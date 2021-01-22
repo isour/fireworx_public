@@ -1,0 +1,56 @@
+mixin set-content()
+	+b.set-content&attributes(attributes)
+		+e.list
+			.grid.grid_setinner
+				each item, index in [1,2,3]
+					.grid__item
+						+product._line
+							+e('a').media(href = '#')
+								+image({'file': 'temp/product-1.jpg', 'alt': 'аки расширительные Flamco Solar'}).product__img
+								+e('button').favorite(type = 'button')
+									+e.heart
+										+icon('heart').icon_heart
+										+icon('heartfill').icon_heartfill
+								+e.badge_red Акция
+								+e.popup
+									+button({"type": "button"}).product__popup-link.js-popup(data-url = 'popup-product.html') Быстрый просмотр
+							+e.params
+								+e.param
+									+e('span').param-label Время работы:
+									+e('span').param-value до 40 сек.
+								+e.param
+									+e('span').param-label Кол-во выстрелов:
+									+e('span').param-value 36
+								+e.param
+									+e('span').param-label Высота:
+									+e('span').param-value до 35 метров
+								+e.param
+									+e('span').param-label Калибр:
+									+e('span').param-value 0,8"
+							+e('a').category(href = '#') Батареи салютов
+							+e.title
+								+e('a').title-link(href = "#") Танец орла (1”, 150 залпов)
+							+e.line
+								+e.sku Артикул: СП7960
+								+e.stock_green В наличии
+							+e.footer
+								+e.price_old 12 425 ₽/шт
+								+e.price 11 425 ₽/шт
+								+e.tocart
+									+tocart._line
+		+e.header
+			+e.media
+				+image({'file': 'temp/set.png', 'alt': 'Набор для Нового Года «Гулять так гулять»'}).set-content__img
+			+e.price
+				+e.price-label Цена товаров в наборе:
+				+e.price-value 23 100 ₽
+			+e.price
+				+e.price-label Ваша экономия:
+				+e.price-value_pink 3 000 ₽
+			+e.price
+				+e.price-label Цена за набор:
+				+e.price-value_total 20 100 ₽
+			+e.tocart
+				+tocart('setinner')._setinner
+			+e.footer
+				+button({'type': 'button'})._big Добавить набор в корзину

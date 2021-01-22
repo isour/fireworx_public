@@ -1,0 +1,168 @@
+.text-icon
+  display: flex
+  align-items: center
+  &__media
+    flex: 0 0 65px
+    overflow: hidden
+  &__title
+    font-size: 16px
+    line-height: 1.2
+  &__text
+    color: #838594
+  &__link
+    font-weight: 500
+    margin-top: 5px
+    display: block
+    vertical-align: middle
+  &__content
+    display: block
+  &_centered &__content
+    padding-left: 15px
+  &_vertical
+    align-items: flex-start
+  &_vertical &__media
+    flex-basis: 65px
+  &_vertical &__icon
+    max-width: 46px
+    max-width: 46px
+  &_vertical &__title
+    font-weight: normal
+    font-size: 15px
+    line-height: 1.5
+  &_medium
+    align-items: flex-start
+  &_medium &__icon
+    max-width: 100%
+    max-height: 100%
+  &_medium &__content
+    padding-left: 20px
+  &_medium &__title
+    font-size: 18px
+    line-height: 1.43
+    margin-bottom: 5px
+    font-weight: bold
+  &_medium &__text
+    font-size: 16px
+    line-height: 1.87
+  &_promo &__media
+    display: flex
+    justify-content: center
+    align-items: center
+    flex: 0 0 50px
+    height: 50px
+    border: 1px solid var(--color_pink)
+    border-radius: 50%
+    overflow: hidden
+  &_promo &__icon
+    max-width: 26px
+    max-height: 25px
+  &_promo &__title
+    font-size: 14px
+    margin-bottom: 2px
+  &_promo &__text
+    font-size: 14px
+  &_promo &__content
+    padding-left: 10px
+  &_checked
+    align-items: flex-start
+  &_about &__media
+    flex-basis: 60px
+    height: 60px
+    width: 60px
+    border-radius: 50%
+    background: var(--color_light)
+    display: flex
+    justify-content: center
+    align-items: center
+  &_about &__content
+    padding-left: 20px
+  &_about &__title
+    color: var(--color_red)
+    font-size: 14px
+    font-weight: 100
+    margin-bottom: 8px
+  &_about &__text
+    color: #fff
+    line-height: 1.25
+  &_product
+    flex-direction: column
+    text-align: center
+  &_product &__media
+    flex-basis: auto
+    margin-bottom: 10px
+  &_product &__title
+    font-size: 14px
+    margin-bottom: 5px
+  &_product &__text
+    color: #838594
+    font-size: 12px
+    line-height: 1.16
+  &_present &__media
+    flex: 0 0 65px
+  &_red &__content
+    color: var(--color_pink)
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.18
+  @mixin tablet
+    &__icon
+      max-width: 40px
+      max-height: 40px
+    &__title
+      font-size: 16px
+      font-weight: 300
+    &_promo
+      flex-direction: column
+      justify-content: center
+      width: 100%
+    &_promo &__media
+      flex-basis: 70px
+      width: 70px
+      background-color: #201E29
+      position: relative
+      z-index: 2
+    &_promo &__content
+      background-color: #201E29
+      border-radius: 16px
+      padding: 32px
+      padding-top: 57px
+      margin-top: -36px
+      position: relative
+      z-index: 1
+      width: 100%
+    &_promo &__title
+      text-align: center
+      font-size: 14px
+      font-weight: normal
+      margin-bottom: 5px
+    &_promo &__text
+      font-size: 14px
+      color: #838594
+      text-align: center
+    &_line &__media
+      flex-basis: 50px
+    &_line &__title
+      font-size: 14px
+      color: #838594
+      margin-bottom: 3px
+    &_line &__text
+      font-size: 12px
+      color: #838594
+    &_present &__media
+      flex: 0 0 80px
+    &_present &__icon
+      width: 50px
+      height: 45px
+    &_present &__title
+      font-weight: 500
+      font-size: 16px
+    &_product
+      justify-content: flex-end
+      align-items: flex-end
+      text-align: right
+    &_order &__title
+      font-size: 18px
+    &_about &__title
+      font-size: 14px
+      color: var(--color_red)
+

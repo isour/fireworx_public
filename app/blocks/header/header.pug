@@ -1,0 +1,55 @@
+include ../logo/logo.pug
+include ../phone/phone.pug
+include ../burger/burger.pug
+include ../menu/menu.pug
+include ../address/address.pug
+include ../cart/cart.pug
+include ../social-list/social-list.pug
+
+mixin header()
+	+b('header').header.compensate-for-scrollbar&attributes(attributes)
+		+e.line
+			+e.container.container
+				+e.logo
+					+logo._header
+				+e.social
+					+social-list({"label": "Пишите нам:"})._header
+				+e.contacts
+					+contacts._header
+		+e.bottom
+			+e.container.container
+				+e.burger
+					+burger
+				+e.service
+					+e('button').service-button.button.js-service(type = 'button')
+						+e.service-media
+							+icon('grid').icon_grid
+						+e.service-text Каталог
+					+e.service-menu.js-servicemenu
+						+e.service-bg
+							+e.container.container
+								+e.col_1
+									+e.menu-title Каталог пиротехники
+									+menu(getData('menu/service'))._service
+								+e.col_2
+									+e.menu-title Каталог пиротехники
+									+menu(getData('menu/service2'))._service
+				+e.search
+					+e('button').search-button.js-search
+						+icon('search').icon_search
+					+e.search-form
+						+parts('search')
+				+e.menu.js-mainmenu
+					+e.menu-inner
+						+menu(getData('menu/header'))._header
+						+e.menu-contacts
+							+contacts._headermobile
+						+e.social
+							+social-list._header
+				+e('a').favorite(title = 'Перейти в избранное' href = '#')
+					+icon('heart').icon_heart
+					+e.favorite-count 2
+				+e('button').profile.js-popup(aria-label = 'Войти' data-url="popup-enter.html" type = 'button' data-class = 'fancybox-login')
+					+icon('user').icon_user
+				+e.cart
+					+cart

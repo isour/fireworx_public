@@ -1,0 +1,95 @@
+.catalog-sort
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  &__sort
+    flex: 1 1 calc(100% - 80px)
+    display: flex
+    flex-direction: column
+    order: 3
+    margin-top: 16px
+    padding-right: 20px
+  &__header
+    order: 2
+    flex: 0 0 125px
+    display: flex
+    flex-direction: column
+  &__grid,
+  &__list
+    display: none
+    &.is-active
+      display: block
+  &__found
+    margin-right: auto
+    color: var(--color_green)
+    font-size: 14px
+    flex: 0 0 calc(100% - 125px)
+    order: 1
+  &__view
+    --btn_size: 40px
+    overflow: hidden
+    display: flex
+    align-items: center
+    position: relative
+    order: 4
+    margin-top: 16px
+    &::before
+      content: ''
+      display: block
+      border: 1px solid #838594
+      border-radius: 18px
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      z-index: 1
+  &__button
+    width: var(--btn_size)
+    height: var(--btn_size)
+    background: none
+    border: none
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    padding: 0
+    position: relative
+    z-index: 2
+    transition: background .4s
+    transition-property: background, color
+    color: #838594
+  &__button_active,
+  &__button:hover
+    background: linear-gradient(to right, #ff5a4c, #ff1660)
+    color: #fff
+    border-radius: 50%
+    color: #fff
+  @mixin desktop
+    align-items: center
+    color: #666C72
+    &__header
+      display: none
+    &__sort
+      flex: 0 0 230px
+      padding: 0
+      padding-right: 0
+      order: unset
+      margin-top: 0
+    &__sort_mobile
+      display: none
+    &__sort_desktop
+      display: block
+    &__view
+      --btn_size: 36px
+      display: flex
+      order: unset
+      margin: 0
+    &__found
+      padding-left: 30px
+      order: unset
+      flex-basis: auto
+    &__list,
+    &__grid
+      display: block

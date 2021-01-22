@@ -1,0 +1,6 @@
+mixin discount()
+	+b('a').discount&attributes(attributes)(href = '#' title = 'Принимаем скидочные карты других магазинов')
+		block
+		+e.header Принимаем скидочные карты других магазинов
+		+e.content
+			+image({'file': 'common/discount.png', 'alt': `Принимаем скидочные карты других магазинов`, 'slick': false}).discount__img

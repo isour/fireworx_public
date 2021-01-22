@@ -1,0 +1,39 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/icon/icon.pug
+include /blocks/promo-list/promo-list.pug
+include /blocks/product/product.pug
+include /blocks/brand/brand.pug
+include /blocks/text-icon/text-icon.pug
+include /blocks/form-callback/form-callback.pug
+include /blocks/contacts/contacts.pug
+include /blocks/catalog-sort/catalog-sort.pug
+include /blocks/pagination/pagination.pug
+include /blocks/breadcrumbs/breadcrumbs.pug
+include /blocks/filter/filter.pug
+include /blocks/tag/tag.pug
+include /blocks/sets/sets.pug
+
+block head
+	- var pageTitle = 'Каталог';
+
+block content
+	+section('promoline')._line
+	+section._breadcrumbs
+		+e.container.container
+			+breadcrumbs([{'title': 'Каталог', 'link': true, 'mobile': true}, {'title': 'Корзина', 'link': false}])
+	+section._sets
+		+e.container.container
+			+e.header
+				+e.title
+					+heading({"tag": "h2"})._h2 Наборы салютов и фейерверков для праздника
+			+e.content
+				+sets
+			+e.footer
+				+button({type: 'button'})._bordergray._big.layout__more Показать еще
+				+e.pagination
+					+pagination
+	+section('products')
+	+section('order')
+	+section('reviews')
+	+section('map')

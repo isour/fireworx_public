@@ -1,0 +1,63 @@
+[
+	{
+		"title": "Батареи салютов",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"img": "temp/cat-1.png",
+		"class": "_small"
+	},
+	{
+		"title": "Ракеты",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"img": "temp/cat-2.png",
+		"class": "_small"
+	},
+	{
+		"title": "Одиночные салюты",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"class": "_small"
+	},
+	{
+		"title": "Римские свечи",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"img": "temp/cat-4.png",
+		"class": "_small"
+	},
+	{
+		"title": "Хлопушки",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"img": "temp/cat-5.png",
+		"class": "_small"
+	},
+	{
+		"title": "Петарды",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"img": "temp/cat-6.png",
+		"class": "_small"
+	},
+	{
+		"title": "Летающие фейерверки ",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"img": "temp/cat-7.png",
+		"class": "_small"
+	},
+	{
+		"title": "Фонтаны",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"img": "temp/cat-8.png",
+		"class": "_small"
+	},
+	{
+		"title": "Бенгальские огни",
+		"count": "168 товаров",
+		"price": "от 1 600 рублей",
+		"class": "_small"
+	}
+]

@@ -1,0 +1,39 @@
+.brand
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 140px
+  padding: 0 15px
+  text-decoration: none
+  &__img
+    width: auto
+    height: auto
+    max-height: 200px
+    filter: grayscale(100%)
+    opacity: 0.8
+    transition: all .4s
+    transition-property: filter, opacity
+  &_catalog
+    width: auto
+    height: auto
+    background-color: #fff
+    border-radius: 4px
+    padding: 18px 10px
+    justify-content: flex-start
+  &_catalog &__media
+    flex: 0 0 80px
+    display: flex
+    justify-content: center
+    align-items: center
+  &_catalog &__img
+    max-width: 80px
+    max-height: 40px
+  &_catalog &__text
+    padding-left: 10px
+    font-size: 14px
+    color: #666666
+    font-weight: 500
+    line-height: 1.35
+  &:hover &__img
+    filter: grayscale(0%)
+    opacity: 1

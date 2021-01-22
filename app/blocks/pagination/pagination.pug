@@ -1,0 +1,13 @@
+mixin pagination()
+	+b.pagination&attributes(attributes)
+		block
+		+e.inner
+			//- +e('a').link_prev(title = "Назад" href="#")
+			//- 	+icon('chevron').icon_chevron
+			+e('a').link_active(title = "Страница 1" href="#") 1
+			+e('a').link(title = "Страница 2" href="#") 2
+			+e('a').link(title = "Страница 3" href="#") 3
+			+e('span').hellip &hellip;
+			+e('a').link(title = "Страница 347" href="#") 347
+			//- +e('a').link_next(title = "Вперед" href="#")
+			//- 	+icon('chevron').icon_chevron._next

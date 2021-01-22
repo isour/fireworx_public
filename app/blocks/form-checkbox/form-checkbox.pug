@@ -1,0 +1,15 @@
+mixin form-checkbox(data)
+	+b.form-checkbox&attributes(attributes)
+		+e('label').label(for = typeof data.id === "undefined" ? undefined : data.id)
+			+e('input').input(
+				type="checkbox",
+				name = typeof data.name === "undefined" ? undefined : data.name,
+				id = typeof data.id === "undefined" ? undefined : data.id,
+				value = typeof data.value === "undefined" ? undefined : data.value,
+				checked = typeof data.checked === "undefined" ? undefined : "checked",
+				aria-label = typeof data.label === "undefined" ? undefined : data.label
+			)
+			+e.fake
+				//- +icon('check').icon_check(fill="none")
+			+e.text
+				block

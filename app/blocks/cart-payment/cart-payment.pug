@@ -1,0 +1,29 @@
+include ../group-radio/group-radio.pug
+
+mixin cart-payment()
+	+b.cart-payment&attributes(attributes)
+		block
+		+e.content
+			+e.radios
+				+group-radio._big
+					+e.item
+						+form-radio({
+							"name": "cart-payment",
+							"id": "cart-payment-1",
+							"label": "Оплата в магазине продаж наличными или картой",
+							"icon": "card2"
+						})._big
+					+e.item
+						+form-radio({
+							"name": "cart-payment",
+							"id": "cart-payment-2",
+							"label": "Оплата курьеру наличными или картой",
+							"icon": "wallet2"
+						})._big
+			//- +e.input
+			//- 	+form-textarea({
+			//- 		"id": "cart-requisites",
+			//- 		"name": "cart-requisites",
+			//- 		"label": "Реквизиты вашей компании",
+			//- 		"placeholder": "Реквизиты вашей компании"
+			//- 	})._nolabel

@@ -1,0 +1,37 @@
+.share
+  display: block
+  &__header
+    margin-bottom: 15px
+  &__content
+    display: flex
+  &__link
+    display: flex
+    width: 60px
+    height: 60px
+    flex: 0 0 60px
+    background-color: var(--color_light)
+    align-items: center
+    justify-content: center
+    color: #888888
+    margin-right: 10px
+    overflow: hidden
+    transition: .4s all
+    transition-property: background, color
+  &__link:hover
+    background-color: var(--color_orange)
+    color: #fff
+  @mixin tablet
+    &__header
+      text-align: right
+      line-height: 1.875
+    &__content
+      justify-content: flex-end
+    &__link
+      margin-right: 0
+      margin-left: 10px
+    &_line
+      display: flex
+      align-items: center
+    &_line &__header
+      margin-bottom: 0
+      margin-right: 30px

@@ -1,0 +1,31 @@
+include ../address/address.pug
+include ../phone/phone.pug
+include ../email/email.pug
+
+mixin contacts()
+	+b.contacts&attributes(attributes)
+		if block
+			block
+		else
+			+e('button').address.js-map(data-index = "0" type = 'button')
+				+address._header
+					+e.media
+						+icon('pin').icon_pin
+					+e.content
+						+e.text ул. Челябинская, 27
+			+e('button').address.js-map(data-index = "1" type = 'button')
+				+address._header
+					+e.media
+						+icon('pin').icon_pin
+					+e.content
+						+e.text бульвар Постышева, 39
+			+e.time
+				+time._header
+					+e.media
+						+icon('calendar3').icon_calendar3
+					+e.content
+						+e.text Пн - Вс:  9:00 - 21:00
+			+e.phone
+				+phone._header
+			+e.order
+				+button({'type': 'button'})._red.js-popup(data-url = 'popup-success.html') Заказать звонок

@@ -1,0 +1,64 @@
+.text-block
+  display: block
+  &__header
+    margin-bottom: 10px
+  &__content
+    color: #666
+    p
+      margin-top: 0
+      margin-bottom: 15px
+  &_level
+    color: #666
+    font-size: 16px
+    line-height: 1.75
+    margin-bottom: 24px
+    h2
+      color: #333
+      margin-bottom: 18px
+      margin-top: 0
+  &_level,
+  &_select
+    li, p
+      margin: 1em 0
+    ul
+      margin: 0
+      padding-left: 0
+      list-style: none
+    ul li
+      list-style: none
+      margin: 0
+      padding: 0
+      padding-left: 20px
+      position: relative
+      margin-bottom: 1em
+      &::before
+        content: ''
+        width: 8px
+        height: 8px
+        background-color: var(--color_lblue)
+        display: inline-block
+        vertical-align: middle
+        margin-right: 5px
+        position: absolute
+        left: 0
+        top: .7em
+  &_level &__header
+    margin-bottom: 18px
+  &_level &__content
+    font-size: 16px
+    line-height: 1.75
+    margin-bottom: 24px
+  @mixin tablet
+    &__header
+      margin-bottom: 20px
+    &_order &__content
+      font-size: 20px
+    &_select &__header
+      margin-bottom: 25px
+    &_level &__content
+      margin-bottom: 46px
+    &_level
+      ul li
+        margin-bottom: .5em
+        &::before
+          top: .5em

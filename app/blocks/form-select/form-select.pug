@@ -1,0 +1,16 @@
+mixin form-select(data)
+	+b.form-select&attributes(attributes)
+		block
+		if (data.label)
+			+e('label').label(for = data.id) #{data.label}
+		if (data.icon)
+			+e.media
+				+icon(data.icon)(class = 'icon_' + data.icon)
+			+icon('chevron').icon_chevron
+		if (data.chevron)
+			+icon('chevron').icon_chevron
+		+e('select').select(name = data.id id = data.id)
+			if placeholder
+				+e('option').option(disabled, selected) #{placeholder}
+			each item, index in data.values
+				+e('option').option(value=item) #{item}

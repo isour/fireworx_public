@@ -1,0 +1,11 @@
+include ../text-icon/text-icon.pug
+
+mixin promo-list(data)
+	+b.promo-list&attributes(attributes)
+		if block
+			block
+		else
+			if (data && data.length)
+				each item, index in data
+					+e.item(class = "_" + index)
+						+text-icon(item)&attributes(attributes)(class = item.class)

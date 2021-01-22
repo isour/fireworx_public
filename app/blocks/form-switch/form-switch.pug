@@ -1,0 +1,19 @@
+mixin form-switch(data)
+	if data
+		+b.form-switch&attributes(attributes)
+			block
+			each item, index in data
+				+e.item
+					+e('label').label
+						+e('input').radio(
+							type = "radio",
+							checked=typeof item.checked === "undefined" ? undefined : "checked",
+							value = typeof item.value === "undefined" ? undefined : item.value,
+							id = typeof item.id === "undefined" ? undefined : item.id,
+							name = typeof item.name === "undefined" ? undefined : item.name
+						)
+						+e.element
+							if item.icon
+								+e.icon-wrap
+									+icon(item.icon)(class="icon_"+item.icon, fill="none")
+							+e.text #{item.label}

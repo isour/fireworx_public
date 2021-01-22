@@ -1,0 +1,40 @@
+mixin footer()
+	+b('footer').footer&attributes(attributes)
+		+e.container_top.container
+			+e.logo
+				+logo._footer
+			+e.phone
+				+phone._footer
+					+e('a').link(href="tel:+73952759980") +7 (3952) 75-99-80
+					+e('button').callback.js-popup(data-url="popup-callback.html" title="Вы можете заказать обратный звонок. Наш менеджер позвонит в удобное для Вас время в ближайший рабочий день.") Заказать звонок
+			+e.social
+				+social-list._footer
+					+e.content
+						+e('a').link(href = '#' title = 'Группа в instagram')
+							+icon('instagram').icon_instagram
+						+e('a').link(href = '#' title = 'Написать в whatsapp')
+							+icon('whatsapp').icon_whatsapp
+						+e('a').link(href = '#' title = 'Написать в viber')
+							+icon('viber').icon_viber
+						+e('a').link(href = '#' title = 'Группа в telegram')
+							+icon('telegram').icon_telegram
+			+e.label
+				+image({'file': 'common/label-1.png'}).footer__label-img
+				+image({'file': 'common/label-2.png'}).footer__label-img
+				+image({'file': 'common/label-3.png'}).footer__label-img
+			+e.card-list
+				.grid.grid_card
+					.grid__item
+						+image({'file': 'common/visa.png', 'alt': 'Visa'}).footer__card
+					.grid__item.grid__item_2
+						+image({'file': 'common/mastercard.png', 'alt': 'Mastercard'}).footer__card
+					.grid__item
+						+image({'file': 'common/mir.png', 'alt': 'Мир'}).footer__card
+			+e.menu
+				+menu(getData('menu/footer'))._footer
+		+e.bottom
+			+e.container.container
+				+e.copyright 2010 - 2020 ©. Irkutsk-Salut. Копирование запрещено. Все права защищены. <br>Информация на сайте не является публично офертой.
+				+e.developer Разработка и продвижение сайта #[a.footer__developer-link(href="#" title="ТочкаРу" target="_blank") ТочкаРУ"]
+		+e('a').totop(href = '#' title = 'Наверх')
+			+icon('arrow').icon_arrow

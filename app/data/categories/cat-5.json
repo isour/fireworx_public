@@ -1,0 +1,38 @@
+[
+	{
+		"name": "Гребные винты",
+		"count": "67 товаров",
+		"img": "page-index/cat-2.png",
+		"class": "category-item_small"
+	},
+	{
+		"name": "Масла и смазки",
+		"count": "567 товаров",
+		"img": "page-index/cat-3.png",
+		"class": "category-item_small"
+	},
+	{
+		"name": "Водометные насадки",
+		"count": "567 товаров",
+		"img": "page-index/cat-4.png",
+		"class": "category-item_small"
+	},
+	{
+		"name": "Запчасти",
+		"count": "567 товаров",
+		"img": "page-index/cat-5.png",
+		"class": "category-item_small"
+	},
+	{
+		"name": "Аксессуары для подвесных моторов",
+		"count": "567 товаров",
+		"img": "page-index/cat-20.png",
+		"class": "category-item_small"
+	},
+	{
+		"name": "Топливные аксессуары",
+		"count": "567 товаров",
+		"img": "page-index/cat-21.png",
+		"class": "category-item_small"
+	}
+]

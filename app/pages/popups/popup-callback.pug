@@ -1,0 +1,10 @@
+extends /blocks/layout-popup/layout-popup.pug
+
+include /blocks/popup/popup.pug
+include /blocks/heading/heading.pug
+include /blocks/icon/icon.pug
+include /blocks/form-callback/form-callback.pug
+
+block content
+	+popup({"icon": "close", "title": "Заказать звонок"})._callback
+		+form-callback

@@ -1,0 +1,69 @@
+.form
+  display: block
+  &_feedback
+    max-width: 500px
+  &__description
+    margin-bottom: 20px
+  &__title
+    margin-bottom: 20px
+  &__input,
+  &__checkbox
+    margin-bottom: 20px
+  &__row
+    margin-bottom: 26px
+  &__footer &__row
+    display: flex
+    flex-direction: column
+  &__link
+    color: var(--color_pink)
+    text-decoration: none
+  &_login &__submit
+    width: 190px
+    margin: 0 auto
+    margin-bottom: 20px
+  &_callback &__text
+    font-size: 20px
+    margin-bottom: 5px
+  &_callback &__text2
+    font-size: 16px
+    color: #838594
+    margin-bottom: 20px
+  &__disclaimer
+    font-size: 14px
+    margin-top: 20px
+  &_search
+    display: flex
+  &_search &__input
+    padding-right: 0
+    margin-bottom: 0
+    flex: 1 1 auto
+  &_search &__footer
+    flex: 0 0 50px
+    display: flex
+    flex-direction: column
+  &_search &__button
+    height: 100%
+    background: none
+    border: none
+    color: #6C6A72
+    padding: 0
+    cursor: pointer
+  &_register
+    max-width: 500px
+  &_register &__footer
+    display: flex
+    flex-direction: column
+  @mixin tablet
+    &_search
+      background-color: #2C2935
+      border-radius: 23px
+    &_review &__content
+      lost-center: 100%
+    &_review &__col
+      lost-column: 1/2 2 20px
+      margin-bottom: 20px
+    &_review &__submit
+      width: 190px
+    &_feedback &__footer
+      display: flex
+      flex-direction: column

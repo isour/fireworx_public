@@ -1,0 +1,18 @@
+extends /blocks/layout-popup/layout-popup.pug
+
+include /blocks/popup/popup.pug
+include /blocks/heading/heading.pug
+include /blocks/icon/icon.pug
+include /blocks/product-info/product-info.pug
+
+block content
+	+popup({"icon": "close"})._product
+		+product-info._popup
+			+e.footer
+				+e.present
+					+text-icon({
+						"title": "Покупая этот товар, вы получаете 3 подарка",
+						"icon": "prize"
+					})._present._red
+				+e.more
+					+button({"type": "link"})._big._bordergray(href = '#') Подробнее о товаре

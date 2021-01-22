@@ -1,0 +1,35 @@
+include ../tocart/tocart.pug
+
+mixin cart-list()
+	+b.cart-list&attributes(attributes)
+		if block
+			block
+		else
+			each item, index in [1,2,3,4]
+				+e.item
+					+e('a').media(href = '#' title = ' Баки расширительные Flamco Solar')
+						+image({'file': 'temp/cart.jpg', 'alt': 'Баки расширительные Flamco Solar'}).cart-list__img
+					+e.header
+						+e.sku Артикул: СП7960
+						+e.category Батареи салютов
+						+e.title Танец орла (1”, 150 залпов)
+						+e.price 11 425 ₽/шт
+					+e.total 11 425 ₽
+					+e.tocart
+						+tocart('cart')._cart
+					+e('button').button(type = 'button').js-remove
+						+icon('trash').icon_trash
+			+e.item_set
+				+e('a').media(href = '#' title = ' Баки расширительные Flamco Solar')
+					+image({'file': 'temp/cart-2.png', 'alt': 'Баки расширительные Flamco Solar'}).cart-list__img
+				+e.header
+					+e.set Набор для Нового Года
+					+e.title «Пошумим немного»
+					+e.price 11 425 ₽/шт
+				+e.params
+					+list([{"title": "Батарея салютов (24 залпа, 1 шт.)"},{"title": "Петарды (1 уп., 36 шт.)"},{"title": "Бенгальские огни малые (10 шт.)"}])._cart
+				+e.total 11 425 ₽
+				+e.tocart
+					+tocart('cart')._cart
+				+e('button').button(type = 'button').js-remove
+					+icon('trash').icon_trash

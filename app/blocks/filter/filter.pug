@@ -1,0 +1,112 @@
+include ../group-radio/group-radio.pug
+include ../group-checkbox/group-checkbox.pug
+include ../fieldset/fieldset.pug
+
+mixin filter()
+	+b('form').filter&attributes(attributes)(action = '#')
+		+e.header
+			+e.title Фильтры
+			+e('button').close.js-filter(type = 'button')
+				+icon('close').icon_close
+		+e.content
+			+e.fieldset
+				+fieldset._accordion._opened
+					+e('button').header(type = 'button').js-fieldset
+						//- +e.minus
+							+icon('minus').icon_minus
+						+heading({"tag": "h6"})._h6 Все категории
+					+e.content
+						+e.scroll
+							+group-checkbox({
+								"name": "filter-cats",
+								"id": "filter-cats",
+								"values": [
+									"Батареи салютов",
+									"Римские свечи",
+									"Бенгальские огни",
+									"Батареи салютов",
+									"Римские свечи",
+									"Бенгальские огни",
+									"Батареи салютов",
+									"Римские свечи",
+									"Бенгальские огни",
+									"Батареи салютов",
+									"Римские свечи",
+									"Бенгальские огни",
+									"Батареи салютов",
+									"Римские свечи",
+									"Бенгальские огни"
+								]
+							})
+			+e.fieldset
+				+fieldset._accordion._opened
+					+e('button').header(type = 'button').js-fieldset
+						+heading({"tag": "h6"})._h6 Цены
+					+e.content
+						+e.scroll
+							+e.row
+								+e.col
+									+form-input({
+										"type": "number",
+										"id": "filter-from",
+										"name": "filter-from",
+										"prefix": "от",
+										"suffix": "₽",
+										"value": "3500"
+									})._price.js-pricefrom
+								+e.col
+									+form-input({
+										"type": "number",
+										"id": "filter-to",
+										"name": "filter-to",
+										"prefix": "до",
+										"suffix": "₽",
+										"value": "123200"
+									})._price.js-priceto
+							+e.row_slider
+								+e.col_lg
+									+form-input({
+										"value": "500 000",
+										"id": "filter-price",
+										"name": "filter-price",
+										"suffix": "rub",
+										"slider": true,
+										"slider_units": "₽",
+										"slider_from": "3500",
+										"slider_to": "123200",
+										"slider_max": "200000",
+										"slider_min": "0",
+										"slider_step": "1000",
+									})._range.js-range
+							+e.row
+								+form-checkbox({
+									"name": "filter-action",
+									"id": "filter-action",
+									"label": "Акционная цена"
+								})._red Акционная цена
+							+e.row
+								+form-checkbox({
+									"name": "filter-sale",
+									"id": "filter-sale",
+									"label": "Товары на распродаже"
+								})._green Товары на распродаже
+			+e.fieldset
+				+fieldset._accordion._opened
+					+e('button').header(type = 'button').js-fieldset
+						//- +e.minus
+							+icon('minus').icon_minus
+						+heading({"tag": "h6"})._h6 Производители
+					+e.content
+						+e.scroll
+							+group-checkbox({
+								"name": "filter-brands",
+								"id": "filter-brands",
+								"values": [
+									"Suzuki",
+									"YAMAHA",
+									"Nissan Marine"
+								]
+							})
+		+e.footer
+			+button(type = 'submit').filter__show Применить
+			+button(type = 'reset')._reset._border.filter__reset Сбросить

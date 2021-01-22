@@ -1,0 +1,252 @@
+.slick-slider
+  position: relative
+  display: block
+  box-sizing: border-box
+  user-select: none
+  touch-action: pan-y
+  -webkit-tap-highlight-color: transparent
+
+.slick-list
+  position: relative
+  overflow: hidden
+  display: block
+  margin: 0
+  padding: 0
+  &:focus
+    outline: none
+  &.dragging
+    cursor: pointer
+    cursor: hand
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+  transform: translate3d(0, 0, 0)
+
+.slick-track
+  position: relative
+  left: 0
+  top: 0
+  display: block
+  margin-left: auto
+  margin-right: auto
+  &::before,
+  &::after
+    content: ""
+    display: table
+  &::after
+    clear: both
+  .slick-loading &
+    visibility: hidden
+
+.slick-slide
+  float: left
+  height: 100%
+  min-height: 1px
+  img
+    display: block
+  &.slick-loading img
+    display: none
+  &.dragging img
+    pointer-events: none
+
+.slick-initialized .slick-slide
+  display: block
+
+.slick-loading .slick-slide
+  visibility: hidden
+
+.slick-vertical  .slick-slide
+  display: block
+  height: auto
+  border: 1px solid transparent
+
+.slick-arrow
+  --arrow_size: 50px
+  border: none
+  width: var(--arrow_size)
+  height: var(--arrow_size)
+  position: absolute
+  bottom: 0
+  margin-left: -85px
+  left: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 10
+  transition: opacity .4s
+  cursor: pointer
+  border-radius: 0
+  padding: 0
+  outline: none
+  background: none
+  background-color: #2E2C3A
+  border-radius: 50%
+  transform: rotate(0)
+  &.slick-disabled
+    opacity: 0
+    cursor: default
+  &__icon
+    width: 16px
+    height: 16px
+  &.slick-next
+    transform: rotate(180deg)
+    left: 50%
+    margin-left: 35px
+  @mixin tablet
+    --arrow_size: 80px
+    margin: 0
+    margin-top: calc(var(--arrow_size) / 2 * -1)
+    &.slick-prev
+      left: -130px
+      right: auto
+      top: 50%
+    &.slick-next
+      right: -130px
+      left: auto
+      top: 50%
+
+.slick-slider_side
+  @mixin tablet
+    .slick-arrow
+      left: -45px
+      top: 50%
+      margin-top: -40px
+      background: none
+      &__icon
+        width: 36px
+        height: 36px
+        stroke-width: 1px
+      &.slick-next
+        left: auto
+        right: -45px
+
+
+.slick-arrow.slick-hidden
+  display: none
+
+.slick-dots
+  list-style: none
+  margin: 0
+  padding: 0
+  margin-left: -8px
+  margin-top: 30px
+  position: relative
+  z-index: 10
+  li
+    display: inline-block
+    vertical-align: middle
+    list-style: none
+    margin: 5px 9px
+    padding: 0
+  button
+    background: none
+    border: none
+    text-indent: -9999px
+    width: 18px
+    height: 18px
+    background: none
+    border: 1px solid #787878
+    border-radius: 50%
+    outline: none
+    padding: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    font-size: 0
+  .slick-active
+    button
+      background-color: #787878
+
+.slick-slider_whitedots
+  .slick-list
+    overflow: visible
+  .slick-dots
+    text-align: left
+    margin-bottom: 0
+    button
+      border: 1px solid #fff
+      &:before
+        display: none
+    .slick-active
+      button
+        background-color: #fff
+
+
+.js-hero
+  position: relative
+
+.section_hero
+  .section__container
+    position: relative
+  .slick-dots
+    position: absolute
+    bottom: 40px
+    left: 20px
+    right: 20px
+    display: flex
+    justify-content: center
+    li
+      margin: 0
+    button
+      width: 50px
+      height: 50px
+      border: 1px solid transparent
+      background: none
+      display: flex
+      justify-content: center
+      align-items: center
+      transition: .4s border
+      &::before
+        content: ''
+        width: 10px
+        height: 10px
+        background-color: #88858C
+        border-radius: 50%
+  .slick-active
+    button
+      border-color: var(--color_red)
+  @mixin tablet
+    .slick-dots
+      left: 26px
+      right: auto
+      bottom: 178px
+
+.js-brands
+  padding-bottom: 50px
+
+.js-set
+  padding-bottom: 80px
+  @mixin tablet
+    padding-bottom: 0
+    .slick-track
+      display: flex
+    .slick-slide
+      float: none
+      height: auto
+      min-height: 0
+
+.js-reviews
+  padding-bottom: 80px
+  @mixin tablet
+    padding-bottom: 0
+    .slick-track
+      display: flex
+    .slick-slide
+      float: none
+      height: auto
+      min-height: 0
+
+.js-products
+  padding-bottom: 80px
+  .slick-track
+    display: flex
+    &::before
+      content: ''
+      display: block
+      flex: 0 0 var(--padding_mobile)
+  .slick-slide
+    float: none
+    height: auto
+  @mixin tablet
+    padding-bottom: 0

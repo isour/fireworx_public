@@ -1,0 +1,23 @@
+mixin form-star(data)
+	+b.form-star&attributes(attributes)
+		if block
+			block
+		else
+			if (data.label)
+				+e.label #{data.label}
+			+e.content
+				+e('input').input#star-5(name = "star", type = "radio")
+				+e('label').star(for = "star-5")
+					+icon('star').icon_star
+				+e('input').input#star-4(name = "star", type = "radio")
+				+e('label').star(for = "star-4")
+					+icon('star').icon_star
+				+e('input').input#star-3(name = "star", type = "radio")
+				+e('label').star(for = "star-3")
+					+icon('star').icon_star
+				+e('input').input#star-2(name = "star", type = "radio")
+				+e('label').star(for = "star-2")
+					+icon('star').icon_star
+				+e('input').input#star-1(name = "star", type = "radio")
+				+e('label').star(for = "star-1")
+					+icon('star').icon_star

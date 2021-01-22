@@ -1,0 +1,120 @@
+.popup
+  display: inline-block
+  overflow: hidden
+  width: 100%
+  /* &_review
+    width: 280px */
+  &_one
+    .cart-list
+      margin-bottom: 20px
+  &_product
+    width: 1420px
+    .fancybox-button
+      background-color: var(--color_dark)
+  &_product &__inner
+    padding: 0
+    background-color: var(--color_light)
+  &__inner
+    background-color: #1A1724
+    padding: 20px
+    padding-top: 0
+    border-radius: 16px
+  &__header
+    border-bottom: 1px solid #302E39
+    margin: 0 -20px
+    padding: 25px 40px
+    margin-bottom: 20px
+  &_cart &__header
+    display: flex
+    align-items: center
+    border-bottom: 1px solid #302E39
+    margin: 0 -20px
+    padding: 15px 20px
+    margin-bottom: 20px
+  &__clear
+    background: none
+    border: none
+    padding: 0
+    color: #838594
+    font-size: 12px
+    margin-left: auto
+  &__title
+    font-size: 18px
+    font-weight: 500
+    color: #838594
+    text-decoration: none
+  &__footer
+    overflow: hidden
+  &__submit
+    flex: 0 0 195px
+  &_cart &__footer
+    border-top: 1px solid #302E39
+    padding: 20px 0
+    padding-bottom: 0
+    margin-top: 20px
+  &__total
+    margin-bottom: 10px
+  &__total-label
+    padding-right: 14px
+    color: #838594
+  &__total-price
+    font-size: 18px
+    font-weight: 500
+  &_login &__header
+    color: #838594
+  @mixin tablet
+    &_callback
+      max-width: 500px
+    &_one
+      max-width: 700px
+    &_success
+      max-width: 500px
+    &__inner
+      padding: 40px
+      padding-top: 0
+    &__header
+      padding-top: 34px
+      padding-bottom: 34px
+      margin: 0 -40px
+      margin-bottom: 20px
+    &__title
+      color: #fff
+    &_login
+      position: absolute
+      transform: scaleY(0)
+      transform-origin: 100% 0
+      transition: transform .4s
+      margin-top: 105px
+      margin-right: -60px
+      max-width: 330px
+      &.is-opened
+        transform: scaleY(1)
+
+    &_cart
+      position: absolute
+      /* transform: scaleY(0) */
+      transform-origin: 100% 0
+      transition: transform .1s
+      margin-top: 105px
+      margin-right: -60px
+      max-width: 560px
+      /* &.is-opened
+        transform: scaleY(1) */
+    &_cart &__inner
+      padding: 20px
+      padding-top: 0
+      background-color: var(--color_dark)
+      box-shadow: 0 10px 10px rgba(0,0,0,.1)
+    &_cart &__footer
+      display: flex
+      align-items: center
+      border-top: 1px solid #302E39
+      margin: 0 -20px
+      padding: 20px 20px
+      padding-bottom: 0
+      margin-top: 20px
+      justify-content: space-between
+    &__total
+      display: flex
+      align-items: center
+      margin-bottom: 0

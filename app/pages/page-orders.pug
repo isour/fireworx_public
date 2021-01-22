@@ -1,0 +1,35 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/icon/icon.pug
+include /blocks/fieldset/fieldset.pug
+include /blocks/cart-total/cart-total.pug
+include /blocks/cart-list/cart-list.pug
+include /blocks/breadcrumbs/breadcrumbs.pug
+include /blocks/cart-delivery/cart-delivery.pug
+include /blocks/cart-contacts/cart-contacts.pug
+include /blocks/cart-payment/cart-payment.pug
+include /blocks/order-list/order-list.pug
+
+
+block head
+	- var pageTitle = 'Корзина';
+
+block content
+	+section('promoline')._line
+	+section._breadcrumbs
+		+e.container.container
+			+breadcrumbs([{'title': 'Каталог', 'link': true, 'mobile': true}, {'title': 'Корзина', 'link': false}])
+	+section._orders
+		+e.container.container
+			+e.header
+				+e.title
+					+heading({'tag': 'h2'})._h2 Личный кабинет
+				+e('a').exit(href = '#')
+					| Выйти
+					+icon('exit').icon_exit
+			+e.content
+				+layout._profile
+					+e.aside
+						+menu(getData('menu/profile'))._profile
+					+e.content
+						+order-list

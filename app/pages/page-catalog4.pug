@@ -1,0 +1,63 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/icon/icon.pug
+include /blocks/promo-list/promo-list.pug
+include /blocks/product/product.pug
+include /blocks/text-icon/text-icon.pug
+include /blocks/form-callback/form-callback.pug
+include /blocks/contacts/contacts.pug
+include /blocks/catalog-sort/catalog-sort.pug
+include /blocks/pagination/pagination.pug
+include /blocks/breadcrumbs/breadcrumbs.pug
+include /blocks/filter/filter.pug
+include /blocks/tag/tag.pug
+
+block head
+	- var pageTitle = 'Каталог';
+
+block content
+	+section('promoline')._line
+	+section._breadcrumbs
+		+e.container.container
+			+breadcrumbs([{'title': 'Каталог', 'link': true, 'mobile': true}, {'title': 'Корзина', 'link': false}])
+	+section._catalog
+		+e.container.container
+			+layout._catalog
+				+e.catalog
+					+e.header
+						+e.title
+							+heading({'tag': 'h2'})._h2 Лодочные моторы в Иркутске
+						+e.sort
+							+catalog-sort
+					+e.content
+						.grid.grid_grid
+							each item, index in [1,2,3,4,5,6,7]
+								each item, index in getData('products/sale')
+									.grid__item
+										+product(item)
+											+e.media
+												+image({'file': item.img, 'alt': `${item.title}`}).product__img
+												+e('button').favorite(type = 'button')
+													+e.heart
+														+icon('heart').icon_heart
+														+icon('heartfill').icon_heartfill
+											+e.content
+												+e.top
+													+e('a').category(href = '#') #{item.category}
+													+e.sku Артикул: СП7960
+												+e('h6').title
+													+e('a').title-link(href = "#") #{item.title}
+												+e.bottom
+													+e.col_1
+														+e.price_old 12 425 ₽/шт
+														+e.price 11 425 ₽/шт
+											+e.footer
+												+tocart
+					+e.footer
+						+pagination
+				+e.aside
+					+e.filter.js-filter
+						+filter
+	+section('accessories')
+	+section('products')
+	+section('map')

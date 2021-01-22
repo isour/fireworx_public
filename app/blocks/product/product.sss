@@ -1,0 +1,334 @@
+.product
+  display: block
+  background-color: var(--color_light)
+  border-radius: 16px
+  overflow: hidden
+  min-height: 100%
+  &__media
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 238px
+    padding: 10px
+    background-color: #fff
+    position: relative
+  &__favorite
+    background: none
+    padding: 0
+    margin: 0
+    border-radius: 50%
+    background: var(--color_light)
+    border: 1px solid #838594
+    width: 36px
+    height: 36px
+    position: absolute
+    cursor: pointer
+    bottom: -18px
+    left: 20px
+    z-index: 2
+  &__heart
+    width: 16px
+    height: 14px
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto
+  &__icon_heartfill
+    color: var(--color_pink)
+    position: absolute
+    left: 0
+    top: 0
+    opacity: 0
+  &__icon_heart,
+  &__icon_heartfill
+    width: 16px
+    height: 14px
+    transition: opacity .4s
+  &__favorite:hover &__icon_heart,
+  &__favorite_active &__icon_heart
+    opacity: 0
+  &__favorite:hover &__icon_heartfill,
+  &__favorite_active &__icon_heartfill
+    opacity: 1
+  &_line &__favorite
+    left: 20px
+    bottom: -18px
+  &__img
+    max-height: 200px
+    max-width: 100%
+  &__brand,
+  &__type
+    font-size: 12px
+    font-weight: 500
+    color: #666C72
+    margin-bottom: 10px
+    display: block
+  &__content
+    padding: 28px 20px
+    padding-bottom: 0
+  &__title
+    font-size: 14px
+    font-weight: 500
+    line-height: 1.42
+    margin: 0
+    margin-bottom: 11px
+    display: block
+    text-decoration: none
+  &__top
+    display: flex
+    font-size: 12px
+    color: #838594
+    justify-content: space-between
+    margin-bottom: 2px
+  &__price
+    font-size: 18px
+    font-weight: 500
+    color: var(--color_pink)
+  &__price-from
+    margin-right: .2em
+  &__price_old
+    font-size: 12px
+    color: #838594
+    text-decoration: line-through
+  &__footer
+    padding: 20px 20px
+    padding-top: 13px
+  &__new
+    position: absolute
+    left: 0
+    top: 0
+    background-color: var(--color_green)
+    border-radius: 4px 0 0 0
+    font-size: 14px
+    font-weight: 500
+    padding: 8px 12px
+    color: #fff
+  &__badge
+    position: absolute
+    left: 0
+    top: 0
+    border-radius: 0 0 16px 0
+    color: #fff
+    font-size: 12px
+    font-weight: 500
+    padding: 8px 19px
+  &__badge_red
+    background-color: var(--color_pink)
+  &__badge_green
+    background-color: var(--color_green)
+  &__badge_blue
+    background-color: var(--color_dark)
+  &__badge_orange
+    background-color: var(--color_red)
+  &__param
+    display: none
+  &__category
+    text-decoration: none
+    font-size: 12px
+    color: #838594
+    margin-bottom: 9px
+  &__params
+    font-size: 12px
+    margin-bottom: -10px
+  &__param
+    margin-bottom: 10px
+  &__param-label
+    color: #838594
+    padding-right: 10px
+  &__param-value
+    color: #fff
+  &__stock
+    font-size: 12px
+  &__stock_green
+    color: var(--color_green)
+  &__line
+    display: flex
+    justify-content: space-between
+    flex: 0 0 100%
+    max-width: 100%
+    margin-bottom: 15px
+    padding: 0 20px
+  &__price-from
+    font-size: 14px
+  &__price-val
+    margin-right: .2em
+  &__sku
+    font-size: 12px
+    color: #838594
+  &__title-link
+    text-decoration: none
+  &_line
+    display: flex
+    flex-wrap: wrap
+    position: relative
+    padding: 0
+  &_line &__param
+    display: block
+    margin-bottom: 7px
+  &_line &__media
+    position: relative
+    flex: 0 0 130px
+    height: 130px
+    max-width: 130px
+    margin: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 25px
+  &_line &__line
+    margin-bottom: 12px
+  &_line &__img
+    max-height: 190px
+  &_line &__title
+    font-size: 14px
+    font-weight: 500
+    margin-bottom: 6px
+    flex: 0 0 100%
+    max-width: 100%
+    padding: 0 20px
+  &_line &__content
+    flex: 1 1 auto
+  &_line &__footer
+    margin: 0
+    padding-top: 0
+    border: none
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+  &_line &__submit
+    display: flex
+    flex-direction: column
+    flex: 0 0 30%
+    max-width: 30%
+  &_line &__price
+    flex: 0 0 100%
+    max-width: 100%
+    margin-bottom: 4px
+  &_line &__input
+    flex: 0 0 70%
+    max-width: 70%
+    padding-right: 10px
+  &_line &__params
+    padding: 16px
+    padding-left: 20px
+    flex: 0 0 calc(100% - 130px)
+    max-width: calc(100% - 130px)
+    margin-bottom: 9px
+  &_line &__category
+    flex: 0 0 100%
+    max-width: 100%
+    padding: 0 20px
+    margin-bottom: 6px
+  &_line &__sku
+    padding-right: 20px
+  &_line &__price_old
+    margin-bottom: 1px
+  &_line &__tocart
+    flex: 0 0 100%
+    max-width: 100%
+  &__popup
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0
+    background-color: rgba(31, 37, 51, .8)
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 1
+    display: none
+  @mixin tablet
+    display: flex
+    flex-direction: column
+    &__popup
+      display: flex
+      opacity: 0
+      transition: opacity .4s
+    &:hover &__popup
+      opacity: 1
+    &__footer
+      margin-top: auto
+    &_line
+      position: relative
+      padding-left: 290px
+      display: flex
+      flex-direction: row
+      min-height: 225px
+    &_line &__type
+      font-size: 14px
+      margin-bottom: 3px
+      flex: 0 0 100%
+      max-width: 100%
+    &_line &__title
+      flex: 0 0 100%
+      max-width: 100%
+      font-size: 18px
+      font-weight: 500
+      padding-right: 20px
+      order: 2
+      padding-left: 0
+      padding-top: 0
+      margin-bottom: 3px
+    &_line &__media
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      width: 250px
+      max-width: 250px
+      height: auto
+      margin: 0
+    &_line &__favorite
+      right: -18px
+      left: auto
+      top: 20px
+      bottom: auto
+    &_line &__category
+      order: 1
+      padding-left: 0
+      padding-top: 28px
+      margin-bottom: 4px
+    &_line &__line
+      order: 3
+      padding-left: 0
+      justify-content: start
+      margin-bottom: 18px
+    &_line &__sku
+      padding-right: 30px
+    &_line &__params
+      order: 4
+      display: flex
+      flex-wrap: wrap
+      padding: 0
+      margin-bottom: 19px
+    &_line &__param
+      margin-right: 25px
+    &_line &__footer
+      flex: 0 0 100%
+      max-width: 100%
+      order: 5
+      padding: 0
+      padding-right: 30px
+      padding-bottom: 33px
+      display: flex
+      align-items: center
+      flex-direction: row
+    &_line &__price
+      flex: 0 0 auto
+      margin-bottom: 0
+      order: 1
+      padding-right: 20px
+      font-size: 24px
+      font-weight: 500
+    &_line &__price_old
+      order: 2
+      font-size: 14px
+      font-weight: normal
+    &_line &__tocart
+      flex-basis: 280px
+      order: 3
+  @mixin desktop
+    &_line &__tocart
+      margin-left: auto

@@ -1,0 +1,5 @@
+mixin partner-item(data)
+	+b.partner-item&attributes(attributes)
+		block
+		if (data.img)
+			+image({'file': data.img, 'alt': data.title}).partner-item__img

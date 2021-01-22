@@ -1,0 +1,45 @@
+include ../rating/rating.pug
+include ../score/score.pug
+
+mixin review-item(data)
+	+b.review-item&attributes(attributes)
+		block
+		+e.line
+			+e.media
+				if (data.img)
+					+image({'file': data.img, 'alt': data.title}).review-item__img
+				else
+					+e.placeholder
+						+icon('placeholder').icon_placeholder
+				if (data.imgList)
+					+e.imglist
+						each item, index in data.imgList
+							+e.imglist-item
+								+image({'file': item.img, 'alt': data.title}).review-item__imgList-img
+				if (data.imgCount)
+					+e('a').imgCount(href = '#' title = `${data.imgCount}`) #{data.imgCount}
+			+e.header
+				+e.title
+					if (data.name)
+						+e.name #{data.name}
+					if (data.date)
+						+e.date #{data.date}
+					if (data.rating)
+						+e.rating
+							+rating(data.rating)
+		+e.content
+			if (data.text)
+				+e.text
+					| !{data.text} !{ ' ' }
+				if (data.more)
+					+e('button').more.js-popup(
+						data-src = "#"
+						title = data.title
+						type = 'button'
+					) Показать полностью
+			if (data.source)
+				+e.source
+					| Ссылка на отзыв: !{ ' ' }
+					+e('a').source-link(href = '#') #{data.source}
+		+e.footer
+			+score

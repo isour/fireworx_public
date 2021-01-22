@@ -1,0 +1,8 @@
+mixin sort()
+	+b.sort&attributes(attributes)
+		block
+		+e.header Сортировка:
+		+e.content
+			+e('a').link_active(href = '#') По цене
+			+e('a').link(href = '#') По популярности
+			+e('a').link(href = '#') По названию

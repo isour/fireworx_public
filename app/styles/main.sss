@@ -1,0 +1,52 @@
+@lost flexbox flex
+
+html
+  line-height: 1.4
+  display: block
+  margin: 0
+  font-family: var(--font_default)
+  background-color: #fff
+  color: var(--color_txt)
+  scroll-behavior: smooth
+
+body
+  -webkit-text-size-adjust: none
+
+a
+  color: var(--color_link)
+
+button,
+input,
+select,
+option,
+textarea
+  font-family: inherit
+
+::selection
+  background-color: var(--color_pink)
+  color: #fff
+
+a
+  color: inherit
+
+strong
+  font-weight: bold
+
+em
+  font-style: italic
+
+img
+  display: block
+  max-width: 100%
+
+.icon
+  fill: currentColor
+
+.nomobile
+  display: none
+  @mixin tablet
+    display: block
+
+.message
+  color: var(--color_red)
+  margin: 10px 0

@@ -1,0 +1,27 @@
+.tag
+  display: flex
+  justify-content: center
+  align-items: center
+  border: 1px solid #3F4961
+  border-radius: 18px
+  padding: 10px 19px
+  font-size: 12px
+  text-align: center
+  background: none
+  color: #fff
+  width: 100%
+  white-space: nowrap
+  cursor: pointer
+  transition: border .4s
+  &__icon
+    display: none
+    width: 10px
+    height: 10px
+  &_active,
+  &:hover
+    background-color: var(--color_lblue)
+    border-color: var(--color_lblue)
+    color: #fff
+  &_active &__icon
+    display: block
+    margin-left: 9px

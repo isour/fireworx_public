@@ -1,0 +1,224 @@
+.cart-list
+  display: block
+  &__item
+    background-color: var(--color_light)
+    margin-bottom: 10px
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-start
+    border-radius: 16px
+    overflow: hidden
+    width: 100%
+  &__button
+    background: none
+    padding: 0
+    margin: 0
+    border: none
+    position: absolute
+    right: 10px
+    bottom: 15px
+    cursor: pointer
+    display: flex
+    align-items: center
+  &__button_close
+    position: absolute
+    right: 15px
+    top: 7px
+    padding: 0
+    width: 20px
+    height: 20px
+  &__button_close &__icon_close
+    width: 12px
+    height: 12px
+    color: #7684A0
+  &__icon_close
+    width: 15px
+    height: 15px
+    color: #C96161
+  &__media
+    display: flex
+    justify-content: center
+    align-items: center
+    flex: 0 0 130px
+    padding: 20px
+    margin-bottom: 28px
+    background-color: #fff
+  &__item_set &__media
+    background: none
+    padding: 0
+  &__header
+    flex: 0 0 calc(100% - 130px)
+    margin-bottom: 10px
+    padding: 22px 10px
+    padding-top: 10px
+  &__params
+    flex: 0 0 100%
+    padding-left: 140px
+    padding-right: 10px
+    font-size: 12px
+    margin-top: -30px
+    margin-bottom: 10px
+  &__content
+    padding-left: 28px
+    flex: 1 1 auto
+  &__total
+    display: none
+  &__price-label
+    display: none
+  &__title
+    font-weight: 500
+    font-size: 14px
+    line-height: 1.42
+    margin-bottom: 20px
+    display: block
+    text-decoration: none
+  &__tocart
+    flex: 0 0 120px
+    align-self: flex-end
+    padding-bottom: 10px
+    padding-left: 10px
+  &__category
+    font-size: 12px
+    color: #888888
+    margin-bottom: 9px
+  &__price
+    flex: 0 0 calc(100% - 120px)
+    color: var(--color_blue)
+    font-size: 16px
+    line-height: 1
+  &__clear
+    font-size: 14px
+    color: #888888
+    border: none
+    padding: 0
+    background: none
+    cursor: pointer
+    font-size: 14px
+  &__footer
+    display: flex
+    justify-content: flex-end
+    margin-top: 18px
+  &_short &__header
+    padding-left: 20px
+  &_short &__content
+    flex-direction: column
+    padding-left: 0
+  &__img
+    max-height: 150px
+  &_short &__media
+    flex: 0 0 100px
+    padding: 10px
+  &_short &__price
+    order: 5
+  &_short &__tocart
+    order: 4
+    flex-basis: 100px
+    padding-bottom: 0
+  &_short &__title
+    font-size: 12px
+    font-weight: 500
+    margin-bottom: 0
+    margin-top: 2px
+  &_short &__price
+    color: var(--color_pink)
+    font-size: 14px
+    font-weight: 500
+    padding-right: 20px
+    padding-left: 20px
+    flex: 0 0 130px
+  @mixin tablet
+    &__content
+      display: flex
+      align-items: center
+    &__item
+      align-items: stretch
+      flex-wrap: nowrap
+      border-radius: 16px
+      overflow: hidden
+    &__media
+      padding: 27px 30px
+      flex: 0 0 170px
+      margin-bottom: 0
+      order: 1
+      border-radius: 16px 0 0 16px
+    &_item_set &__media
+      padding: 0
+    &__header
+      flex: 1 1 auto
+      margin-bottom: 0
+      padding-left: 30px
+      padding-bottom: 20px
+      order: 2
+    &__sku,
+    &__category
+      font-size: 11px
+      color: #838594
+      margin: 0
+      margin-right: 20px
+      display: inline-block
+      vertical-align: middle
+    &__title
+      margin-top: 3px
+      font-size: 16px
+      font-weight: 500
+      margin-bottom: 8px
+    &__params
+      order: 4
+    &__tocart
+      top: 0
+      flex-basis: 16%
+      align-self: center
+      order: 5
+      padding: 0
+    &__total
+      display: block
+      order: 6
+      flex-basis: 20%
+    &__price
+      flex-basis: 15%
+      align-self: center
+      order: 3
+    &__price
+      font-size: 14px
+      color: #838594
+      text-align: left
+    &__total
+      flex: 0 0 130px
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      font-size: 18px
+      font-weight: 500
+      line-height: 1
+    &__price-label,
+    &__total-label
+      display: block
+      color: #888
+      font-size: 12px
+      margin-bottom: 6px
+      font-weight: normal
+    &__button
+      padding: 40px 20px
+      position: relative
+      right: auto
+      bottom: auto
+      order: 8
+    &__button_close
+      padding: 0
+      right: 10px
+      top: 7px
+    &__set
+      font-size: 12px
+      color: var(--color_red)
+    &__params
+      flex: 1 1 auto
+      display: flex
+      align-items: center
+      font-size: 12px
+      margin: 0
+      padding: 10px
+      padding-left: 10px
+      padding-right: 30px
+      color: #838594

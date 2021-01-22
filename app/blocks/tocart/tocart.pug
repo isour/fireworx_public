@@ -1,0 +1,55 @@
+mixin tocart(type)
+	if type === 'cart'
+		+b.tocart&attributes(attributes)
+			if block
+				block
+			else
+				+e.count
+					+e('button').button_dec.js-dec
+						+icon('minus').icon_minus
+					+e.wrapper
+						+e('input').input(type = 'number' value = '1')
+					+e('button').button_inc.js-inc
+						+icon('plus').icon_plus
+	else if (type == 'set')
+		+b('form').tocart&attributes(attributes)(action = '#')
+			if block
+				block
+			else
+				+e.count
+					+e('button').button_dec.js-dec
+						+icon('minus').icon_minus
+					+e.wrapper
+						+e('input').input(type = 'number' value = '1')
+					+e('button').button_inc.js-inc
+						+icon('plus').icon_plus
+				+e.footer
+					+button._tocart(type = 'submit') В корзину
+	else if (type == 'setinner')
+		+b('form').tocart&attributes(attributes)(action = '#')
+			if block
+				block
+			else
+				+e.count
+					+e('button').button_dec.js-dec
+						+icon('minus').icon_minus
+					+e.wrapper
+						+e('input').input(type = 'number' value = '1')
+					+e('button').button_inc.js-inc
+						+icon('plus').icon_plus
+				+e.footer
+					+button._bordergray._tocart(type = 'submit') Заказать в 1 клик
+	else
+		+b('form').tocart&attributes(attributes)(action = '#')
+			if block
+				block
+			else
+				+e.count
+					+e('button').button_dec.js-dec
+						+icon('minus').icon_minus
+					+e.wrapper
+						+e('input').input(type = 'number' value = '1')
+					+e('button').button_inc.js-inc
+						+icon('plus').icon_plus
+				+e.footer
+					+button._border._tocart(type = 'submit') В корзину

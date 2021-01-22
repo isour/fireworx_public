@@ -1,0 +1,18 @@
+mixin product-carousel()
+	+b.product-carousel&attributes(attributes)
+		block
+		+e.media
+			+e('button').play(type = 'button')
+				+icon('play').icon_play
+			.grid.grid_main.js-main
+				each item, index in [1,2,3,4,5]
+					.grid__item
+						+e('img').img(src = `../${iPath}temp/big.jpg` alt = `Баки расширительные Flamco Flexcon PRO`)
+						//- +image({'file': 'temp/big.jpg', 'alt': `Баки расширительные Flamco Flexcon PRO`}).product-carousel__img
+		//- +e.content
+			.grid.grid_image.js-img
+				each item, index in [1,2,3,4,5]
+					.grid__item
+						+e.border
+							+e('img').image(src = `../${iPath}temp/small-${index}.jpg` alt = `Баки расширительные Flamco Flexcon PRO`)
+							//- +image({'file': `temp/small-${index}.jpg`, 'alt': `Баки расширительные Flamco Flexcon PRO`}).product-carousel__img(data-big = "temp/big.jpg")

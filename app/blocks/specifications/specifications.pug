@@ -1,0 +1,11 @@
+mixin specifications(data)
+	+b.specifications&attributes(attributes)
+		if data.header
+			+e.header #{data.header}
+		+e.content
+			+e('ul').list
+				each item, index in data.values
+					+e('li').item
+						+e('span').label
+							+e('span').label-bg #{item.label}
+						+e('span').value #{item.value}

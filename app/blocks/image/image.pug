@@ -1,0 +1,51 @@
+mixin image(data)
+	- let pattern = /^((http|https|ftp):\/\/)/
+	- let ext = pattern.test(data.file)
+	- let w, h, url;
+	if ext && !data.sizes
+		-
+			console.log(Date.now() / 1000 | 0, 'start')
+			imgUrl = 'http://via.placeholder.com/350x150';
+			options = urlF.parse(imgUrl);
+			w = 'qwe'
+			httpF.get(options, function (response) {
+				console.log(w, '1');
+				let chunks = [];
+				response.on('data', function (chunk) {
+					chunks.push(chunk);
+				}).on('end', function() {
+					console.log(w, '2');
+					let buffer = Buffer.concat(chunks);
+					let dimensions = resize_img(buffer);
+					w = dimensions.width;
+					h = dimensions.height;
+					w = 'new';
+					console.log(w, 'w', h, 'h');
+					console.log(Date.now() / 1000 | 0, 'loaded')
+				});
+			});
+			setTimeout(function() {},125000)
+		span= h
+		span #{Date.now() / 1000 | 0}
+		+b('img').image&attributes(attributes)(src = data.file width = w height = h)
+	else if (ext && data.sizes)
+		- w = data.sizes.width
+		- h = data.sizes.height
+		- url = data.file
+	else
+		-
+			try {
+				let dimensions = resize_img(`dist/${iPath}${data.file}`)
+				w = dimensions.width
+				h = dimensions.height
+				url = '../' + iPath + data.file
+			} catch (err) {
+				console.log(`Image not found: dist/${iPath}${data.file}`)
+			}
+	+b('img').image.lazyload&attributes(attributes)(
+		loading = 'lazy'
+		data-src = url
+		width = w
+		height = h
+		alt = typeof data.alt === "undefined" ? '' : data.alt
+	)

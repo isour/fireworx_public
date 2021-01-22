@@ -1,0 +1,10 @@
+mixin group-checkbox(data)
+	+b.group-checkbox&attributes(attributes)
+		if data
+			each item, index in data.values
+				+e.item
+					+form-checkbox({
+						"name": data.name,
+						"id": data.id + index,
+						"label": item
+					})._group #{item}

@@ -1,0 +1,17 @@
+mixin menu(data)
+	+b.menu&attributes(attributes)
+		if (data && data.length)
+			each item, index in data
+				+e.item(class = typeof item.class === "undefined" ? '' : `${item.class}`)
+					if (item.icon)
+						+e('a').link(href=item.url title=item.title)
+							+icon(item.icon)(class = `icon_${item.icon}`)
+							| #{item.title}
+					else
+						+e('a').link(href=item.url title=item.title)
+							| #{item.title}
+							if (item.submenu && item.submenu.length)
+								+icon('triangle').icon_triangle
+					if (item.submenu && item.submenu.length)
+						+e.submenu
+							+menu(item.submenu)._submenu

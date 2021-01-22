@@ -1,0 +1,15 @@
+include /blocks/set/set.pug
+
+mixin sets()
+	+b.sets&attributes(attributes)
+		block
+		+e.header
+			+e('a').button_active(href = '#' title = 'Все наборы') Все наборы
+			+e('a').button(href = '#' title = 'Наборы для Нового Года') Наборы для Нового Года
+			+e('a').button(href = '#' title = 'Наборы для свадьбы') Наборы для свадьбы
+			+e('a').button(href = '#' title = 'Наборы для выпускного') Наборы для выпускного
+		+e.content
+			.grid.grid_set2
+				each item, index in getData('set/catalog')
+					.grid__item
+						+set(item)

@@ -1,0 +1,75 @@
+.slider-controls
+  display: flex
+  justify-content: center
+  &__icon
+    width: 10px
+    height: 10px
+    fill: #fff
+  &__arrow
+    border: none
+    background: none
+    cursor: pointer
+    padding: 0
+    display: flex
+    align-items: center
+    transform: rotate(180deg)
+  &__arrow_next
+    transform: rotate(0deg)
+  &__dots
+    display: flex
+    align-items: center
+    flex: 0 0 auto
+    padding: 0 40px
+    .slick-dots
+      margin: 0
+      padding: 0
+      display: flex
+      align-items: center
+      button
+        width: 8px
+        height: 8px
+        background-color: #fff
+        border-color: #fff
+        opacity: 0.4
+        transition: transform
+      li
+        display: inline-flex
+        margin: 0
+        margin-left: 7px
+        margin-right: 7px
+      .slick-active
+        button
+          opacity: 1
+          transform: scale(1.4)
+  @mixin tablet
+    justify-content: flex-start
+    padding: 0 var(--padding_tablet)
+    &_reviews
+      padding: 0
+    &_reviews &__arrow
+      border: none
+      width: 40px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+      z-index: 10
+      transition: opacity .4s
+      cursor: pointer
+      border-radius: 0
+      padding: 0
+      outline: none
+      transform: rotate(180deg)
+      border: 2px solid #DDDFE5
+      border-radius: 4px
+      background-color: #fff
+    &_reviews &__icon
+      color: var(--color_blue)
+      width: 10px
+      height: 10px
+      position: relative
+      fill: currentColor
+    &_reviews &__arrow_next
+      margin-left: 10px
+    &_reviews &__arrow_next &__icon
+      transform: rotate(180deg)

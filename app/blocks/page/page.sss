@@ -1,0 +1,18 @@
+.page
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  background-color: #201E29
+  color: var(--color_txt)
+  transition: transform .4s
+  /* @mixin scroll-style */
+  &__content
+    padding-top: var(--header_mobile)
+  &_opened
+    transform: translateX(-260px)
+  &__content
+    flex: 1 1 auto
+  @mixin tablet
+    overflow-x: hidden
+    &__content
+      padding-top: var(--header_tablet)

@@ -1,0 +1,100 @@
+.contacts
+  display: block
+  flex-wrap: wrap
+  &__address
+    margin-bottom: 13px
+    background: none
+    padding: 0
+    border: none
+    margin: 0
+    cursor: pointer
+  &__phone
+    margin-bottom: 17px
+  &_header &__email
+    text-align: right
+  &__branch_second
+    margin-top: 35px
+  &_headermobile
+    display: flex
+    flex-direction: column
+    border-top: 1px solid #43424E
+    padding-top: 35px
+    margin-top: 32px
+  &_headermobile &__address
+    order: 3
+    margin-bottom: 13px
+  &_headermobile &__time
+    order: 4
+    margin-top: 10px
+    margin-bottom: 23px
+  &_headermobile &__phone
+    order: 1
+    margin-bottom: 15px
+  &_headermobile &__order
+    order: 2
+    margin-bottom: 37px
+  &_page &__address,
+  &_page &__phone,
+  &_page &__email
+    margin-bottom: 13px
+  &_page &__address
+    width: 100%
+  &_section &__address,
+  &_section &__phone
+    margin-bottom: 11px
+  @mixin tablet
+    &_header
+      display: flex
+      align-items: center
+      flex-wrap: nowrap
+    &__address,
+    &__phone,
+    &__email
+      margin-bottom: 0
+    &__address
+      margin-right: 20px
+    &__order
+      margin-left: 10px
+    &__time
+      margin-right: 10px
+    &__branch_second
+      margin-bottom: 0
+    &_section &__address,
+    &_section &__phone,
+    &_section &__email
+      margin-bottom: 13px
+    &_page
+      display: flex
+      flex: 1 1 auto
+    &_page &__address
+      width: 100%
+      padding-right: 20px
+      margin-right: 0
+    &_page &__branch
+      flex: 0 0 50%
+      margin-bottom: 0
+    &_header
+      flex: 1 1 auto
+      justify-content: flex-end
+    &_header &__time
+      flex: 0 0 150px
+    /* &_header &__phone
+      flex: 1 1 auto
+    &_header &__order
+      flex: 1 1 auto */
+    &_header &__address
+      display: none
+  @media (min-width: 1300px)
+    &_header &__time
+      margin-right: 32px
+    &_header &__address
+      display: block
+      margin-right: 34px
+    &_header &__order
+      flex: 0 0 130px
+      display: flex
+      flex-direction: column
+    &__order
+      margin-left: 20px
+    &__time
+      margin-right: 40px

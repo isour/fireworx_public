@@ -1,0 +1,266 @@
+.section
+  display: block
+  &__header
+    margin-bottom: 30px
+  &__header_center
+    text-align: center
+  &__subtitle
+    color: #838594
+    font-size: 18px
+    text-align: center
+    margin-top: 17px
+  &__footer
+    margin-top: 25px
+  &_hero
+    position: relative
+  &_promo
+    margin-top: 30px
+    margin-bottom: 40px
+  &_promo2
+    display: none
+  &_service
+    margin-bottom: 85px
+  &__brands
+    margin: 0 calc(-1 * var(--padding_mobile))
+  &_brands
+    margin-bottom: 55px
+  &_products
+    margin-bottom: 55px
+  &_sets
+    margin-bottom: 80px
+  &_order
+    background-color: var(--color_light)
+    margin: 0
+    margin-bottom: 70px
+  &_order &__title
+    text-align: center
+    margin-bottom: 26px
+  &_order &__content
+    padding: 60px 0px
+    padding-bottom: 10px
+  &_order &__footer
+    display: flex
+    flex-direction: column
+    padding: 0 32px
+    margin-top: 38px
+  &_order &__link
+    margin-top: 8px
+  &_reviews
+    margin-bottom: 80px
+  &_reviews &__header
+    max-width: 230px
+    margin: 0 auto
+    margin-bottom: 30px
+  &_reviews &__footer
+    display: flex
+    flex-direction: column
+  &_reviews &__more
+    margin-top: 10px
+  &_about
+    margin-bottom: 75px
+  &__aside
+    margin-bottom: 50px
+  &_breadcrumbs
+    margin-bottom: 25px
+    margin-top: 12px
+  &_sets
+    margin-bottom: 80px
+  &_setinner
+    margin-bottom: 80px
+  &_page,
+  &_orders
+    margin-bottom: 50px
+  &_orders &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__exit
+    text-decoration: none
+    color: #838594
+  &__icon_exit
+    margin-left: 15px
+    position: relative
+    top: -2px
+  &_map &__content
+    background-color: var(--color_light)
+    margin: 0 calc(-1 * var(--padding_mobile))
+    padding: 40px 20px
+  &__description
+    text-align: center
+    margin-top: 15px
+  &_opt,
+  &_content
+    margin-bottom: 50px
+  &_opt &__footer,
+  &_404 &__footer
+    display: flex
+    flex-direction: column
+    align-items: center
+  &_404 &__header
+    padding-top: 100px
+    text-align: center
+  &_404 &__content
+    text-align: center
+  &_404 &__footer
+    padding-bottom: 100px
+  @mixin tablet_small
+    &_map
+      margin: 20px 0
+      margin-bottom: 40px
+      position: relative
+    &_map &__row
+      overflow: hidden
+      display: flex
+      max-width: var(--width_desktop)
+      margin: 0 auto
+      padding-left: var(--padding_tablet)
+      padding-right: var(--padding_tablet)
+    &__contacts
+      background-color: var(--color_light)
+      border-radius: 16px 0 0 16px
+      overflow: hidden
+      flex: 0 0 50%
+      padding: 20px
+    &__map
+      border-radius: 0 16px 16px 0
+      overflow: hidden
+      flex: 0 0 50%
+      width: 50%
+  @mixin tablet
+    &_hero
+      margin-bottom: -150px
+      position: relative
+      z-index: 1
+    &_promo
+      position: relative
+      z-index: 2
+      margin-bottom: 100px
+    &_promo2
+      display: block
+      border-bottom: 1px solid #37353F
+      padding-bottom: 20px
+      padding-top: 17px
+      margin-top: 0
+      margin-bottom: 30px
+    &_service &__header
+      display: none
+    &_products
+      margin-bottom: 130px
+      overflow: hidden
+    &__subtitle
+      text-align: left
+    &_sets
+      margin-bottom: 140px
+      overflow: hidden
+    &_sets &__header
+      margin-bottom: 40px
+    &_order
+      position: relative
+      margin-bottom: 130px
+    &_order &__content
+      width: 50%
+      position: relative
+      z-index: 2
+      padding: 40px 0
+    &_order &__title
+      text-align: left
+      margin-bottom: 50px
+    &_order &__list
+      max-width: 400px
+    &_order &__media
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      z-index: 1
+      width: 50%
+    &_order &__img
+      height: 100%
+      width: 100%
+      object-fit: cover
+      object-position: 0 50%
+    &_order &__footer
+      padding: 0
+      width: 320px
+      margin-top: 53px
+    &_order &__link
+      margin-top: 3px
+    &_reviews
+      margin-bottom: 150px
+      overflow: hidden
+    &_reviews &__header
+      max-width: none
+      margin-bottom: 40px
+    &_reviews &__footer
+      display: flex
+      justify-content: center
+      flex-direction: row
+    &_reviews &__button,
+    &_reviews &__more
+      width: 270px
+    &_reviews &__button
+      margin-right: 10px
+    &_reviews &__more
+      margin-top: 0
+      margin-left: 10px
+    &_about
+      margin-bottom: 180px
+    &_about &__header
+      margin-bottom: 40px
+    &__contacts &__header
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      text-align: center
+    &_map
+      padding-top: 120px
+      margin-bottom: 160px
+    &__contacts
+      padding: 20px
+      flex: 0 0 33%
+      width: 33%
+    &__map
+      flex: 0 0 67%
+      width: 67%
+    &_map &__content
+      padding: 0
+    &__contacts &__container
+      padding: 0
+    &_line
+      flex-direction: row
+    &__form
+      display: flex
+    &__form &__aside
+      flex: 0 0 340px
+    &__form &__content
+      padding-right: 20px
+      flex: 1 1 auto
+    &__total
+      margin-top: 55px
+    &__total_small
+      margin-top: 62px
+    &_setinner
+      margin-bottom: 160px
+    &_contacts
+      margin-bottom: 100px
+    &_page
+      margin-bottom: 100px
+    &_orders
+      margin-bottom: 100px
+  @mixin desktop
+    &_service
+      margin-bottom: 117px
+    &_brands
+      margin-bottom: 63px
+    &_brands &__header
+      margin-bottom: 39px
+    &_order &__content
+      width: 550px
+      padding-top: 120px
+      padding-bottom: 138px
+    &__contacts
+      padding: 75px 60px
+      padding-left: 70px
+    &_products &__header
+      margin-bottom: 28px

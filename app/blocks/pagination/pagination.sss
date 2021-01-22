@@ -1,0 +1,35 @@
+.pagination
+  display: block
+  color: #888
+  margin: 0 -8px
+  --size: 40px
+  &__inner
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    overflow-x: auto
+  &__link,
+  &__hellip
+    text-decoration: none
+    margin: 0 5px
+    flex: 0 0 var(--size)
+    width: var(--size)
+    height: var(--size)
+    display: flex
+    align-items: center
+    color: #838594
+    font-size: 14px
+    justify-content: center
+    background-color: var(--color_light)
+    border: none
+    border-radius: 50%
+    transition: background, border, color .4s
+  &__link_active,
+  &__link:hover
+    color: #fff
+    background: linear-gradient(to right, #ff5a4c, #ff1660)
+  &__link_prev,
+  &__link_next
+    color: var(--color_lblue)
+  &__link_prev &__icon
+    transform: rotate(-180deg)

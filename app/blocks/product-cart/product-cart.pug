@@ -1,0 +1,22 @@
+include ../form/form.pug
+
+mixin product-cart()
+	+b.product-cart&attributes(attributes)
+		block
+		+e.priceold 12 425 ₽/шт
+		+e.line
+			+e.price 11 425 ₽/шт
+			+e.sale Акция до 20 декабря
+		+e.tocart
+			+tocart._product
+				+e.count
+					+e('button').button_dec.js-dec
+						+icon('minus').icon_minus
+					+e.wrapper
+						+e('input').input(type = 'number' value = '1')
+					+e('button').button_inc.js-inc
+						+icon('plus').icon_plus
+				+e.footer
+					+button._big._tocart(type = 'submit') В корзину
+				+e.footer2
+					+button({"type": "link"})._big._order._bordergray Заказать в 1 клик

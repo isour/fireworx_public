@@ -1,0 +1,26 @@
+[
+	{
+		"name": "Судовое обеспечение",
+		"count": "28 товаров",
+		"img": "page-index/cat-16.png",
+		"class": "category-item_little"
+	},
+	{
+		"name": "Фурнитура для катеров",
+		"count": "28 товаров",
+		"img": "page-index/cat-17.png",
+		"class": "category-item_little"
+	},
+	{
+		"name": "Фурнитура для тентов",
+		"count": "28 товаров",
+		"img": "page-index/cat-18.png",
+		"class": "category-item_little"
+	},
+	{
+		"name": "Палубные люки и иллюминаторы",
+		"count": "28 товаров",
+		"img": "page-index/cat-19.png",
+		"class": "category-item_little"
+	}
+]

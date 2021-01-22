@@ -1,0 +1,63 @@
+.address
+  display: block
+  font-size: 14px
+  font-weight: 300
+  line-height: 1.2
+  color: #333
+  &__label
+    font-weight: bold
+  &_header
+    color: #838594
+    display: flex
+    align-items: center
+  &_header &__media
+    color: #4B4757
+  &_header &__content
+    padding-left: 10px
+    font-size: 12px
+    font-weight: normal
+  &_contacts
+    display: flex
+  &_contacts &__label
+    color: #838594
+    font-size: 12px
+    margin-bottom: 3px
+    font-weight: normal
+  &_contacts &__text
+    font-size: 18px
+    font-weight: 500
+    color: var(--color_txt)
+  &_contacts &__media
+    color: var(--color_pink)
+    flex: 0 0 20px
+  &_contacts &__content
+    padding-left: 10px
+  &_page
+    display: flex
+    text-align: left
+  &_page &__label
+    font-size: 12px
+    color: #838594
+    font-weight: normal
+  &_page &__text
+    color: #ECECEC
+    font-size: 18px
+    padding-left: 0
+  &_page &__media
+    color: #838594
+    flex: 0 0 30px
+  @mixin desktop
+    &_contacts
+      font-size: 18px
+    &_header
+      display: flex
+      align-items: center
+      text-align: left
+      color: #838594
+      font-size: 12px
+      font-weight: normal
+    &_header &__content
+      padding-left: 5px
+    &__label
+      flex: 0 0 110px
+      max-width: 110px

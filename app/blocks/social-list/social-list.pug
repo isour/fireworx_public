@@ -1,0 +1,22 @@
+mixin social-list(data)
+	+b.social-list&attributes(attributes)
+		if block
+			block
+		else
+			if (data && data.label)
+				+e.header #{data.label}
+			+e.content
+				+e('a').link(href = '#' title = 'Группа в instagram')
+					+icon('instagram').icon_instagram
+				+e('a').link(href = '#' title = 'Написать в whatsapp')
+					+icon('whatsapp').icon_whatsapp
+				+e('a').link(href = '#' title = 'Написать в viber')
+					+icon('viber').icon_viber
+				+e('a').link(href = '#' title = 'Группа в telegram')
+					+icon('telegram').icon_telegram
+			if (data && data.phone)
+				+e.footer
+					+e.line
+						+e('a').phone(href = 'tel:+79086556677') 8 (908) 555-66-77
+					+e.line
+						+e('a').email(href = 'mailto:salut@mail.ru') salut@mail.ru

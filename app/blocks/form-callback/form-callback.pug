@@ -1,0 +1,36 @@
+include ../form/form.pug
+
+mixin form-callback(cl)
+	+b.form-callback&attributes(attributes)
+		if block
+			block
+		else
+			+form._callback
+				+e.text Оставьте свои контактные данные
+				+e.text2 Мы перезвоним вам в течение 5 минут и ответим на все ваши вопросы
+				+e.row
+					+form-input({
+						"type": "text",
+						"label": "Ваше имя",
+						"placeholder": "Ваше имя",
+						"name": "name",
+						"id": "callback-name"
+					})._nolabel._dark
+				+e.row
+					+form-input({
+						"type": "text",
+						"label": "Номер телефона или Email",
+						"placeholder": "Номер телефона или Email",
+						"name": "phone",
+						"id": "callback-phone"
+					})._nolabel._dark
+				+e.row
+					+form-checkbox({
+						"name": "callback-confirm",
+						"value": 1,
+						"checked": true
+					})
+						+e('span').txt Прочитал и принимаю <a href="#" class="form-checkbox__link">политику конфиденциальности</a>
+				+e.footer
+					+e.row
+						+button._big Перезвоните мне

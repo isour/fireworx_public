@@ -1,0 +1,14 @@
+mixin hero(data)
+	+b.hero&attributes(attributes)
+		+e.content
+			+e.container.container
+				+e.header
+					+e('h1').title
+						| #{data.title}
+						+e.title-big #{data.big}
+					+e('h2').pretitle #{data.preTitle}
+				+e.footer
+					+button({'type': 'link'})._medium.hero__button(href = '#') Перейти в каталог
+		if data.img
+			+e.media
+				+image({'file': data.img, 'alt': imgAlt}).hero__image

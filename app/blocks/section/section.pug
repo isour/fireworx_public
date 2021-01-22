@@ -1,0 +1,240 @@
+include ../promo-list/promo-list.pug
+include ../rating/rating.pug
+include ../brand/brand.pug
+include ../set/set.pug
+include ../time/time.pug
+
+mixin section(name)
+	if name
+		case name
+			when 'about'
+				+section._about
+					+e.container.container
+						+e.header_center
+							+heading({tag: 'h3'})._h3._border Немного о нас
+						+e.content
+							+about
+			when 'brands'
+				+section._brands
+					+e.container.container
+						+e.header_center
+							+heading({tag: 'h3'})._h3._border Наши поставщики
+						+e.brands.grid_brands.js-brands
+							each item, index in [1,2,3]
+								each item, index in getData('brands')
+									.grid__item
+										+brand(item)
+			when 'sets'
+				+section._sets
+					+e.container.container
+						+e.header_center
+							+heading({tag: 'h3'})._h3._border Наборы салютов и фейерверков для праздника
+						+e.content
+							.grid.grid_set.js-set
+								each item, index in getData('set/front')
+									.grid__item
+										+set(item)
+			when 'products'
+				+section._products
+					+e.container.container
+						+e.header_center
+							+heading({tag: 'h3'})._h3 Фейерверки и салюты
+						+tabs._products
+							+e.header
+								+e('button').button_active.js-tab(data-tab = ".tabs__tab_product1" type = 'button') По акции
+								+e('button').button.js-tab(data-tab = ".tabs__tab_product2" type = 'button') Распродажа
+								+e('button').button.js-tab(data-tab = ".tabs__tab_product3" type = 'button') Хит продаж
+								+e('button').button.js-tab(data-tab = ".tabs__tab_product4" type = 'button') Новинки
+							+e.tab_product1._active
+								.grid.grid_products.js-products
+									each item, index in getData('products/sale')
+										.grid__item
+											+product(item)
+							+e.tab_product2
+								.grid.grid_products.js-products
+									each item, index in getData('products/sale')
+										.grid__item
+											+product(item)
+							+e.tab_product3
+								.grid.grid_products.js-products
+									each item, index in getData('products/sale')
+										.grid__item
+											+product(item)
+			when 'map'
+				+section._map
+					+e.row
+						+e.contacts
+							+e.container.container
+								+e.block
+									+e.header_center
+										+heading({tag: 'h3'})._h3._border Наши магазины в Иркутске
+									+e.content
+										+contacts._section
+											+e.branch
+												+e.address
+													+address._contacts
+														+e.media
+															+icon('pin').icon_pin
+														+e.content
+															+e.label Адрес:
+															+e.text ул. Челябинская, 27
+												+e.phone
+													+phone._contacts
+														+e.media
+															+icon('phone3').icon_phone3
+														+e.content
+															+e.label Телефон:
+															+e.text
+																+e('a').link(href="tel:+7 3952759980") +7 (3952) 75-99-80
+												+e.time
+													+time._contacts
+														+e.media
+															+icon('calendar2').icon_calendar2
+														+e.content
+															+e.label Режим работы:
+															+e.text Пн - Вс: 9:00 - 21:00
+															+e('button').onmap.js-mapbutton(data-index = "0" type = 'button') Показать на карте
+											+e.branch_second
+												+e.address
+													+address._contacts
+														+e.media
+															+icon('pin').icon_pin
+														+e.content
+															+e.label Адрес:
+															+e.text бульвар Постышева, 39
+												+e.phone
+													+phone._contacts
+														+e.media
+															+icon('phone3').icon_phone3
+														+e.content
+															+e.label Телефон:
+															+e.text
+																+e('a').link(href="tel:+73952759980") +7 (3952) 75-99-80
+												+e.time
+													+time._contacts
+														+e.media
+															+icon('calendar2').icon_calendar2
+														+e.content
+															+e.label Режим работы:
+															+e.text Пн - Вс:  9:00 - 21:00
+															+e('button').onmap.js-mapbutton(data-index = "1" type = 'button') Показать на карте
+						+e.map
+							+map
+			when 'video'
+				+section._video
+					+e.container.container
+						+e.header
+							+heading({tag: 'h2'})._h2 Полезные советы и обзоры ремонтов
+						+e.content
+							+video-switcher
+			when 'reviews'
+				+section._reviews
+					+e.container.container
+						+e.header_center
+							+heading({tag: 'h3'})._h3._border Отзывы клиентов о нашем магазине
+						+e.content
+							.grid.grid_reviews.js-reviews
+								each item, index in getData('reviews')
+									.grid__item(class = `grid__item_${index}`)
+										+review-item(item)
+						+e.footer
+							+button._bigger.js-popup.section__button(aria-label = 'Оставить отзыв' data-url="popup-review.html" type = 'button') Оставить отзыв
+							+button({type: 'link', href: '/reviews', title: 'Смотреть все отзывы'})._bordergray._bigger.section__more Смотреть все отзывы
+
+			when 'promo'
+				+section._promo
+					+e.container.container
+						+promo-list(getData('promo/home'))._main
+			when 'promoline'
+				+section._promo._promo2
+					+e.container.container
+						+promo-list(getData('promo/line'))._line
+			when 'wework'
+				+section._wework
+					+e.container.container
+						+e.header
+							+heading({"tag": "h2"})._h2 Как мы работаем
+						+e.content
+							.grid
+								+e.workorder.grid__item.grid__item_40
+									+work-order
+								+e.worktime.grid__item.grid__item_60
+									+waste-time
+			when 'order'
+				+section._order
+					+e.container.container
+						+e.content
+							+e.title
+								+heading({"tag": "h4"})._h4
+									| Закажите на свой праздник профессионального #[span.heading__big пиротехника]
+							+e.list
+								+promo-list(getData('promo/order'))._order
+							+e.footer
+								+button._big.js-popup(aria-label = 'Заказать пиротехника' data-url="popup-order.html" type = 'button') Заказать пиротехника
+								+button({"type": "link"})._big._link.section__link.js-popup(href = "#") Наши услуги застрахованы
+						+e.media
+							+image({'file': 'page-index/order.jpg', 'alt': 'Закажите на свой праздник профессионального пиротехника'}).section__img
+			when 'quality'
+				+section._quality
+					+e.container.container
+						+e.header
+							+heading({"tag": "h2"})._quality Оцените качество информации на странице:
+						+e.content
+							+form._quality
+								+e.row
+									+form-star({"label": "Средняя оценка: 4.7 (52 голоса)"})
+			when 'repaircost'
+				+section._repaircost
+					+e.container.container
+						+e.block
+							+e.header
+								+e.title
+									+heading({"tag": "h2"})._h2 Узнайте стоимость ремонта прямо сейчас
+							+e.content
+								+form._cost2
+									+e.row
+										+form-select({
+											"icon": "usb",
+											"placeholder": "Устройство",
+											"values": [
+												"Телефон",
+												"Телевизор",
+												"Монитор",
+												"Стиральная машинка"
+											],
+											"id": "cost-device",
+											"name": "cost-device"
+										}).js-select.js-device._icon
+									+e.row
+										+form-select({
+											"icon": "c`hip",
+											"placeholder": "Модель",
+											"values": [
+												"Экран",
+												"Кнопка",
+												"Дверца",
+												"Зарядка"
+											],
+											"id": "cost-model",
+											"name": "cost-model"
+										}).js-select._icon
+									+e.row
+										+form-select({
+											"icon": "broken",
+											"placeholder": "Неисправность",
+											"values": [
+												"Экран",
+												"Кнопка",
+												"Дверца",
+												"Зарядка"
+											],
+											"id": "cost-crash",
+											"name": "cost-crash"
+										}).js-select.js-crash._icon
+									+e.footer
+										+button._orange Узнать стоимость
+			default
+				h2 wrong section name
+	else
+		+b('section').section&attributes(attributes)
+			block

@@ -1,0 +1,24 @@
+include ../order-product/order-product.pug
+
+mixin order-list()
+	+b.order-list&attributes(attributes)
+		block
+		each item, index in [1,2,3]
+			+e.item
+				+e.header Заказ №52345231
+				+e.content
+					+e.list
+						+e.product Танец орла (1”, 150 залпов)
+						+e.product Танец орла (1”, 150 залпов)
+						+e.product Танец орла (1”, 150 залпов)
+					+e('button').toggle(type = 'button').js-ordermore Показать все
+					+e.payment
+						+e.price
+							+e.price-label Итоговая цена:
+							+e.price-value_big 27 260 ₽
+						+e.price
+							+e.price-label Оплата:
+							+e.price-value Наличными в магазине
+						+e.price
+							+e.price-label Статус заказа:
+							+e.price-value_green Выкуплен

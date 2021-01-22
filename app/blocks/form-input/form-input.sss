@@ -1,0 +1,96 @@
+.form-input
+  display: block
+  width: 100%
+  &__label
+    display: block
+    margin-bottom: 8px
+    font-size: 14px
+  &_nolabel &__label
+    display: none
+  &__media
+    flex: 0 0 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #1A1724
+  &__inner
+    border: 1px solid #3E3D49
+    background-color: #3E3D49
+    color: #838594
+    display: flex
+    align-items: center
+    border-radius: 24px
+  &_icon &__input
+    padding-left: 0
+  &__input
+    width: 100%
+    padding: 14px 20px
+    line-height: 1.3
+    font-weight: normal
+    background: none
+    border: none
+    color: currentColor
+    font-size: 14px
+    @mixin placeholder
+      color: #838594
+      opacity: 1
+    &:focus
+      border-color: color(#e9e9e9 l(20%))
+  &_dark &__inner
+    color: #6B6972
+    border: 1px solid #2C2935
+    background-color: #2C2935
+  &_bordered &__input
+    background-color: transparent
+    border-color: rgba(196, 196, 196, 0.5)
+    color: #fff
+    font-size: 18px
+    font-weight: 500
+    @mixin placeholder
+      color: #fff
+  &_nolabel &__label
+    display: none
+  &__icon
+    color: #1A1724
+  &__prefix
+    flex: 0 0 40px
+    padding: 14px 5px
+    padding-left: 15px
+    margin-right: 0
+  &_price &__input
+    width: calc(100% - 40px)
+    padding-left: 0
+    padding-right: 35px
+    appearance: none
+    -moz-appearance: textfield
+  &_price &__inner
+    position: relative
+  &_price &__inner:after
+    content: '₽'
+    font-size: 14px
+    color: #fff
+    position: absolute
+    right: 15px
+    top: 50%
+    transform: translateY(-50%)
+    pointer-events: noen
+  @mixin tablet
+    &_search &__inner
+      border: none
+      background: none
+    &_search &__input
+      background: none
+      padding: 12px 20px
+      border: none
+      font-size: 14px
+      font-weight: 100
+      color: #fff
+    &__label
+      margin-bottom: 13px
+
+input.form-input::-webkit-inner-spin-button,
+input.form-input::-webkit-outer-spin-button
+  -webkit-appearance: none
+  appearance: none
+  margin: 0
+  display: none

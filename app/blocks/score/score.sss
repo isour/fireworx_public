@@ -1,0 +1,22 @@
+.score
+  display: flex
+  align-items: center
+  font-size: 14px
+  &__header
+    margin-right: 19px
+  &__content
+    display: flex
+  &__button
+    background: none
+    padding: 9px 10px
+    flex: 0 0 auto
+    text-align: center
+    border: none
+    cursor: pointer
+    border: 1px solid #838594
+    border-radius: 20px
+    margin-left: 10px
+    color: var(--color_txt)
+  @mixin tablet
+    &__button
+      padding: 9px 15px

@@ -1,0 +1,89 @@
+.social-list
+  --icon-size: 16px
+  display: block
+  &__content
+    display: flex
+    align-items: center
+  &__link
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #838594
+    width: var(--icon-size)
+    height: var(--icon-size)
+    flex: 0 0 var(--icon-size)
+    margin-right: 15px
+  &__icon
+    fill: currentColor
+    width: 20px
+    height: 20px
+    transition: color .2s
+  &__header
+    margin-bottom: 6px
+  &__content
+    display: flex
+  &_footer &__header
+    display: none
+  &_footer
+    --icon-size: 40px
+  &_footer &__icon
+    width: 16px
+    height: 16px
+  &_footer &__link
+    background: none
+    border: 1px solid #838594
+    border-radius: 50%
+    color: #FF2060
+    margin: 0 5px
+  &_header &__link
+    margin-right: 20px
+  &__line
+    margin-top: 10px
+  &_page
+    display: flex
+    flex-direction: column
+  &__email,
+  &__phone
+    color: #838594
+    text-decoration: none
+    font-size: 14px
+  &_page &__link
+    margin-right: 0
+    margin-left: 20px
+  @mixin tablet
+    &_header
+      --icon-size: 16px
+      display: flex
+      align-items: center
+      margin: 0
+    &_header &__header
+      font-size: 12px
+      color: #838594
+      display: block
+      padding-right: 22px
+      margin: 0
+    &_header &__link
+      background: none
+    &_page
+      align-items: flex-end
+    &_footer
+      display: block
+    &_footer &__header
+      display: block
+      margin-bottom: 6px
+    &_footer &__content
+      justify-content: flex-end
+      flex-direction: row-reverse
+    &_footer &__link
+      margin-left: 10px
+    &__line
+      text-align: right
+  @mixin desktop_small
+    &_header &__header
+      display: none
+  @media (min-width: 1300px)
+    &_header &__header
+      display: block
+    &_footer &__link
+      margin: 0
+      margin-left: 10px

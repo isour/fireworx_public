@@ -1,0 +1,6 @@
+mixin rating(value)
+	+b.rating&attributes(attributes)
+		block
+		each item, index in [1,2,3,4,5]
+			+e.item
+				+icon('star').icon_star(class = value > index ? "_active" : "" class = "_" + index)

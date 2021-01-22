@@ -1,0 +1,11 @@
+mixin logo()
+	+b('a').logo&attributes(attributes)(href = '/' title = 'На главную')
+		if block
+			block
+		else
+			+e.media
+				+icon('logo').icon_logo
+			+e.content
+				+e.title Сибирь-Салют
+				+e.slogan Интернет-магазин пиротехники
+			//- +image({'file': 'common/logo.png', 'alt': 'Рейтинг 4.8'}).logo__img

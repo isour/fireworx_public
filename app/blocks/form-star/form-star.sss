@@ -1,0 +1,28 @@
+.form-star
+  display: flex
+  align-items: center
+  height: 48px
+  &__label
+    display: block
+    padding-right: 9px
+    cursor: pointer
+    font-size: 14px
+    color: #838594
+  &__content
+    display: flex
+    flex-direction: row-reverse
+    align-items: flex-start
+  &__icon_star
+    width: 18px
+    height: 18px
+    transition: fill .4s
+    cursor: pointer
+  &__input
+    display: none
+  &__star:hover,
+  &__input:checked ~ &__star
+    color: var(--color_yellow)
+  &__star
+    margin-right: 2px
+    display: flex
+    color: var(--color_light)

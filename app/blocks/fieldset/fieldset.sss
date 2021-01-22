@@ -1,0 +1,102 @@
+.fieldset
+  display: block
+  padding: 0
+  margin: 0
+  border: none
+  &_accordion
+    border: none
+    overflow: hidden
+  &_accordion &__header
+    color: #fff
+    background: none
+    padding: 0
+    border: none
+    cursor: pointer
+    display: flex
+    align-items: center
+    /* padding-bottom: 20px */
+    width: 100%
+    position: relative
+    &::after
+      content: ''
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 5px 8px 5px
+      border-color: transparent transparent #838594 transparent
+      transform: rotate(-180deg)
+      right: 0
+      top: 8px
+      position: absolute
+  &_accordion &__content
+    display: none
+    margin-top: 18px
+    padding-top: 20px
+    border-top: 1px solid #43424E
+  &_opened &__header
+    &::after
+      transform: rotate(0)
+  &_opened &__content
+    display: block
+  &__minus
+    width: 20px
+    height: 20px
+    color: #fff
+    background-color: var(--color_blue)
+    border-radius: 4px
+    margin-right: 10px
+  &__icon_minus
+    width: 10px
+    height: 2px
+  &__row
+    display: flex
+    justify-content: space-between
+    margin-bottom: 7px
+  &__row_slider
+    margin-top: 20px
+    margin-bottom: 25px
+  &__col
+    flex: 0 0 46%
+  &__col_lg
+    flex: 0 0 100%
+  &__scroll
+    overflow: hidden
+    width: 100%
+  &_border
+    border: none
+    margin-bottom: 20px
+    background-color: var(--color_light)
+    padding: 35px 30px
+    border-radius: 16px
+  &_border &__header
+    margin-bottom: 15px
+    color: #fff
+    border-bottom: 1px solid #43424E
+    display: flex
+    justify-content: space-between
+    padding-bottom: 24px
+  &_cart &__legend
+    font-weight: normal
+    font-size: 24px
+    line-height: 1.21
+    position: relative
+  &_cart &__header
+    display: flex
+    align-items: baseline
+    margin-bottom: 32px
+  &__link
+    color: var(--color_red)
+    font-size: 14px
+    margin-left: 30px
+    position: relative
+    text-decoration: none
+    font-weight: normal
+    position: relative
+    top: -3px
+  @mixin tablet
+    &_cart
+      margin-bottom: 48px
+    &_cart &__legend
+      font-size: 26px
+    &_cart &__header
+      margin-bottom: 25px

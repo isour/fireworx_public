@@ -1,0 +1,42 @@
+extends /blocks/layout-popup/layout-popup.pug
+
+include /blocks/popup/popup.pug
+include /blocks/heading/heading.pug
+include /blocks/icon/icon.pug
+include /blocks/form/form.pug
+
+block content
+	+popup({"icon": "close", "title": "Обратная связь"})._feedback
+		+form._feedback
+			+e.row
+				+form-input({
+					"type": "text",
+					"label": "Ваше имя",
+					"placeholder": "Иван",
+					"name": "name",
+					"id": "feedback-name"
+				})
+			+e.row
+				+form-input({
+					"type": "phone",
+					"label": "Email или номер телефона",
+					"placeholder": "Email или номер телефона",
+					"name": "phone",
+					"id": "feedback-phone"
+				})
+			+e.row
+				+form-textarea({
+					"label": "Ваш вопрос",
+					"placeholder": "Задайте ваш вопрос",
+					"name": "question",
+					"id": "feedback-question"
+				})
+			+e.row
+				+form-checkbox({
+					"name": "feedback-fz152",
+					"value": 1,
+					"checked": false
+				})
+					+e('span').txt Я прочитал и принимаю #[a.form-checkbox__link(href="#") политику конфиденциальности]
+			+e.footer
+				+button._medium.form__submit Перезвоните мне

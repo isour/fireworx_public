@@ -1,0 +1,29 @@
+include ../group-radio/group-radio.pug
+
+mixin cart-delivery()
+	+b.cart-delivery&attributes(attributes)
+		block
+		+e.radioes
+			+group-radio._big._double
+				+e.item
+					+form-radio({
+						"name": "cart-delivery",
+						"id": "cart-delivery-1",
+						"label": "Доставка по Иркутску курьером",
+						"icon": "delivery"
+					})._big
+				+e.item
+					+form-radio({
+						"name": "cart-delivery",
+						"id": "cart-delivery-2",
+						"label": "Самовывоз со склада",
+						"icon": "box2"
+					})._big
+		+e.input
+			+form-input({
+				"type": "text",
+				"id": "cart-address",
+				"name": "cart-address",
+				"label": "Адрес доставки",
+				"placeholder": "Укажите ваш адрес"
+			})._nolabel

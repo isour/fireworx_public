@@ -1,0 +1,82 @@
+.text-image
+  display: block
+  text-align: left
+  &__media
+    position: relative
+    margin-bottom: 10px
+  &_vertical
+    position: relative
+    z-index: 2
+  &_vertical &__media
+    margin-bottom: 40px
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      top: 100%
+      width: 5px
+      height: 10px
+      margin-top: -5px
+      background-color: var(--color_orange)
+    &::before
+      content: ''
+      position: absolute
+      display: block
+      background: none
+      width: 0
+      height: 0
+      top: 100%
+      margin-top: -5px
+      left: 5px
+      border-style: solid
+      border-width: 5.5px 0 5.5px 5px
+      border-color: transparent transparent transparent var(--color_orange)
+  &_vertical &__image
+    width: 100%
+    height: 160px
+    object-fit: cover
+  &_vertical &__title
+    font-weight: 500
+    font-size: 18px
+    line-height: 1.3
+  &_present
+    display: flex
+    align-items: center
+  &_present &__media
+    flex: 0 0 60px
+    height: 60px
+    padding: 10px
+    background-color: #fff
+    border-radius: 16px
+    margin: 0
+  &_present &__content
+    padding-left: 20px
+  &_present &__title
+    color: #8D8C93
+    font-size: 12px
+  &_present &__description
+    font-size: 14px
+    font-weight: normal
+  &_effect
+    display: flex
+    align-items: flex-start
+  &_effect &__media
+    flex: 0 0 60px
+    height: 60px
+    border-radius: 50%
+    margin: 0
+    overflow: hidden
+  &_effect &__title
+    color: #838594
+    font-size: 16px
+    line-height: 1.3
+    font-weight: 100
+  &_effect &__content
+    padding-left: 20px
+  @mixin tablet
+    &_vertical &__media
+      margin-bottom: 37px
+    &_vertical &__img
+      height: 160px
+      object-fit: cover

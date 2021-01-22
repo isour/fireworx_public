@@ -1,0 +1,6 @@
+mixin score(data)
+	+b.score&attributes(attributes)
+		+e.header Отзыв был полезен?
+		+e.content
+			+e('button').button_up(type = 'button' aria-label = 'Палец вверх').js-scoreup Да
+			+e('button').button_down(type = 'button' aria-label = 'Палец вниз').js-scoredown Нет

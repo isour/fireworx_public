@@ -1,0 +1,25 @@
+.form-textarea
+  display: block
+  width: 100%
+  &__textarea
+    width: 100%
+    color: #838594
+    padding: 14px 17px
+    border-radius: 24px
+    border: 1px solid #3E3D49
+    background-color: #3E3D49
+    font-size: 14px
+    @mixin placeholder
+      color: #838594
+      opacity: 1
+    &:focus
+      border-color: color(#e9e9e9 l(20%))
+  &_nolabel &__label
+    display: none
+  &_dark &__textarea
+    color: #6B6972
+    border: 1px solid #2C2935
+    background-color: #2C2935
+  @mixin desktop
+    &__textarea
+      font-size: 14px

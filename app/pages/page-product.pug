@@ -1,0 +1,209 @@
+extends /blocks/layout-default/layout-default.pug
+
+include /blocks/icon/icon.pug
+include /blocks/promo-list/promo-list.pug
+include /blocks/brand/brand.pug
+include /blocks/text-icon/text-icon.pug
+include /blocks/form-callback/form-callback.pug
+include /blocks/contacts/contacts.pug
+include /blocks/breadcrumbs/breadcrumbs.pug
+include /blocks/product-info/product-info.pug
+include /blocks/product-additional/product-additional.pug
+include /blocks/specifications/specifications.pug
+include /blocks/tabs/tabs.pug
+include /blocks/product/product.pug
+include /blocks/video/video.pug
+
+block head
+	- var pageTitle = 'Продукт';
+
+block content
+	+section('promoline')._line
+	+section._breadcrumbs
+		+e.container.container
+			+breadcrumbs([{'title': 'Главная', 'link': true}, {'title': 'Каталог', 'link': true, 'mobile': true}, {'title': 'Лодочные моторы', 'link': false}])
+	+e.container.container
+		+layout._product
+			+e.info
+				+product-info
+			+e.present
+				.grid.grid_present
+					.grid__item.grid__item_0
+						+text-icon({
+							"title": "Покупая этот товар, вы получаете 3 подарка",
+							"icon": "prize"
+						})._present._red
+					.grid__item
+						+text-image({
+							"title": "Бенгральские огни",
+							"description": "С Новым Годом (600 мм.)",
+							"img": "temp/present.jpg"
+						})._present
+					.grid__item
+						+text-image({
+							"title": "Бенгральские огни",
+							"description": "С Новым Годом (600 мм.)",
+							"img": "temp/present.jpg"
+						})._present
+					.grid__item
+						+text-image({
+							"title": "Бенгральские огни",
+							"description": "С Новым Годом (600 мм.)",
+							"img": "temp/present.jpg"
+						})._present
+			+e.row
+				+e.video
+					+video({
+						"title": "Ремонт залитого ноутбука - как это делаем мы",
+						"src": "r9SMEr9G2y4"
+					})
+				+e.additional
+					+product-additional
+			+e.tabs
+				+section._producttabs
+					+e.tabs
+						+tabs._product
+							+e.header
+								+e('button').button_active.js-tab(data-tab = ".tabs__tab_1" type = 'button') Подробное описание
+								+e('button').button_second.js-tab.js-tab(data-tab = ".tabs__tab_2" type = 'button') Инструкция
+								+e('button').button_second.js-tab.js-tab(data-tab = ".tabs__tab_3" type = 'button') Достака и оплата
+								+e('button').button_second.js-tab.js-tab(data-tab = ".tabs__tab_4" type = 'button') Гарантии
+							+e.content
+								+e.tab_1._active
+									+e.title
+										+heading({"tag": "h5"})._h5 Батарея салютов Громовержец (2"х51)
+									+e.spec
+										+specifications(getData('specifications/description'))._table
+									+e.title
+										+heading({"tag": "h5"})._h5 10 эффектов:
+									.grid.grid_three
+										.grid__item
+											+text-image({
+												"img": "temp/red.jpg",
+												"title": "Красные звезды с пышными трещащими хвостами (трещащий кокос) с синими звездами (пион) и белое мерцание"
+											})._effect
+										.grid__item
+											+text-image({
+												"img": "temp/red.jpg",
+												"title": "Красные звезды с пышными трещащими хвостами (трещащий кокос) с синими звездами (пион) и белое мерцание"
+											})._effect
+										.grid__item
+											+text-image({
+												"img": "temp/red.jpg",
+												"title": "Красные звезды с пышными трещащими хвостами (трещащий кокос) с синими звездами (пион) и белое мерцание"
+											})._effect
+										.grid__item
+											+text-image({
+												"img": "temp/green.jpg",
+												"title": "Зеленые звезды с пышными трещащими хвостами (трещащий кокос) с синими звездами (пион) и золотое мерцание"
+											})._effect
+										.grid__item
+											+text-image({
+												"img": "temp/green.jpg",
+												"title": "Зеленые звезды с пышными трещащими хвостами (трещащий кокос) с синими звездами (пион) и золотое мерцание"
+											})._effect
+										.grid__item
+											+text-image({
+												"img": "temp/green.jpg",
+												"title": "Зеленые звезды с пышными трещащими хвостами (трещащий кокос) с синими звездами (пион) и золотое мерцание"
+											})._effect
+										.grid__item
+											+text-image({
+												"img": "temp/green.jpg",
+												"title": "Серебряные тре- щащие хвосты (трещащая ива) с золотыми ниспадающими нитями (парча) и зеленые звезды"
+											})._effect
+									+e.text
+										p Товар проверен и сертифицирован для использования на территории Российской Федерации (ГОСТ Р 51270–99)
+										p Срок годности всех пиротехнических изделий, представленных в магазине: до 2021 - 2023 года (срок годности конкретного изделия Вы можете уточнить у оператора)
+								+e.tab_2
+									.grid.grid_two
+										.grid__item
+											+text-icon({
+												"title": "Инструкция для мотора Suzuki DT15A",
+												"icon": "pdf"
+											})._file
+										.grid__item
+											+text-icon({
+												"title": "Презентация нового мотора Suzuki DT9.9A-15A",
+												"icon": "zip"
+											})._file
+										.grid__item
+											+text-icon({
+												"title": "Каталог запчастей Suzuki DT15A",
+												"icon": "doc"
+											})._file
+										.grid__item
+											+text-icon({
+												"title": "Приготовление топливной смеси для двухтактных топливных моторов",
+												"icon": "jpg"
+											})._file
+								+e.tab_3
+									+e.title
+										+heading({"tag": "h5"})._h5 Информация об оплате
+									+e.text
+										p Оплатить заказ можно любым способом в одном наших магазинов. При доставке оплата производится курьеру наличными.
+										p Оплата производится только в российских рублях.
+										p Возможна оплата на расчетный счет.
+									+e.title
+										+heading({"tag": "h5"})._h5 Информация об доставке
+									+e.text
+										p Отгрузка товара производится со склада в Иркутске ежедневно, кроме выходных и праздничных дней.
+										p Доставка по городу бесплатно при покупке от 5 000 рублей.
+										p Доставка производится в день заказа или на следующий день.
+								+e.tab_4
+									+e.title
+										+heading({"tag": "h5"})._h5 Задать вопрос по товару
+									+form._feedback
+										+e.content
+											+e.col
+												+e.row
+													+form-input({
+														"type": "text",
+														"label": "Ваше имя",
+														"placeholder": "Иван",
+														"name": "name",
+														"id": "feedback-name"
+													})
+											+e.col
+												+e.row
+													+form-input({
+														"type": "phone",
+														"label": "Email или номер телефона",
+														"placeholder": "Email или номер телефона",
+														"name": "phone",
+														"id": "feedback-phone"
+													})
+										+e.row
+											+form-textarea({
+												"label": "Ваш вопрос",
+												"placeholder": "Задайте ваш вопрос",
+												"name": "question",
+												"id": "feedback-question"
+											})
+										+e.row
+											+form-checkbox({
+												"name": "feedback-fz152",
+												"value": 1,
+												"checked": false
+											})
+												+e('span').txt Я прочитал и принимаю #[a.form-checkbox__link(href="#") политику конфиденциальности]
+										+e.footer
+											+button._medium.form__submit Задать вопрос
+											+e.disclaimer Мы ответим вам на указанную электронную почту или перезвоним по номеру телефона.
+	+section._products
+		+e.container.container
+			+e.header_center
+				+heading({"tag": "h2"})._h2 Похожие товары
+			+e.content
+				.grid.grid_products.js-products
+					each item, index in getData('products/sale')
+						.grid__item
+							+product(item)._border
+					each item, index in getData('products/sale')
+						.grid__item
+							+product(item)._border
+	+section('order')
+	+section('reviews')
+	+section('about')
+	+section('map')
+
